@@ -21,12 +21,13 @@ main {
 .game-board {
   display: flex;
   flex-direction: column;
-  color: #ffffff;
-  font-size: 175%;
-  /* border: 2px solid white; */
-  width: 50%;
   justify-content: flex-start;
   align-items: center;
+  color: #ffffff;
+  font-size: 225%;
+  /* border: 2px solid white; */
+  width: 50%;
+  text-decoration: underline;
 }
 
 .game-board {
@@ -38,14 +39,13 @@ main {
 .buffalo-token,
 .mountain-token{
   border-radius: 10px;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   /* border: solid orange; */
-  margin: 0;
-  padding:0;
+  margin: 50px;
 }
 
 h1, h2, h3{
   /* border: 5px solid blue; */
-  margin: 0;
+  margin: 10px;
 }
