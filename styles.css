@@ -1,3 +1,23 @@
 *{
 font-family: 'Cookie', cursive;
 }
+
+body {
+/* Need to change background color but keep the blue! */
+    background: linear-gradient(#134d71, #c7e5d2);
+    background-attachment: fixed;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.player-one,
+.player-two,
+.game-board {
+  color:  #ffffff;
+  font-size: 200%;
+}
