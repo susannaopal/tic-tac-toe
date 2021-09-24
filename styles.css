@@ -49,3 +49,6 @@ h1, h2, h3{
   /* border: 5px solid blue; */
   margin: 10px;
 }
+.hidden {
+  display: none;
+}
