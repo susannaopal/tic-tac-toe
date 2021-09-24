@@ -1,5 +1,6 @@
 # Title
 Mod + Project Name
+Find the project [here](file:///Users/susannacarey/turing/mod_1/tic-tac-toe/index.html)
 
 ## Table of Contents
   - [Abstract](#abstract)
@@ -16,14 +17,17 @@ Mod + Project Name
 	Overview of project + goals
 
 ## Technologies
-  - Javascript
-  - eslint
-  - node
   - Atom
-	- WebPack
-	- API
+	- Chrome
+  - Javascript
+  - CSS
+  - HTML
 
 ## Code Architecture
+  - Javascript
+  - CSS
+  - HTML
+
 
 ## Illustrations
 
