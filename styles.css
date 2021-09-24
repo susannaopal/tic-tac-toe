@@ -21,19 +21,27 @@ main {
 .player-two,
 .game-board {
   display: flex;
+  flex-direction: column;
   color:  #ffffff;
   font-size: 200%;
   border: 2px solid white;
-  /* height: 100vh; */
   width: 50%;
 }
 
 .game-board {
   width: 70%;
+  background: #e2fef4;
+  color: navy;
 }
 
-.buffalo-token{
+.buffalo-token,
+.mountain-token{
   border-radius: 10px;
   width: 20%;
   height: 40%;
+  border: 5px solid orange;
+}
+
+h1, h2, h3{
+  border: 5px solid blue;
 }
