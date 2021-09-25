@@ -22,8 +22,8 @@ module.exports = Game;
 //1 new instance of the game is 2 new instances of the player
 
 
-A TIMEOUT is used after a completed game to reset the board:
-does this get done here or in main?
+// A TIMEOUT is used after a completed game to reset the board:
+// does this get done here or in main?
 
 
 //should conditionals be in here?

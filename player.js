@@ -25,9 +25,9 @@ class Player {
   }
   retrieveWinsFromStorage () {
   }
-};
+}
 
 module.exports = Player;
 
 
-//Local storage only needed to persist for wins: persist across page load refreshes 
+//Local storage only needed to persist for wins: persist across page load refreshes
