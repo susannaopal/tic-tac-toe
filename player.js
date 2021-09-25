@@ -1,13 +1,13 @@
 // Player methods must include, but are not limited to:
-// constructor - properties should include: name (ex: 'Human'), token (ex: '👩🏻'), wins (ex: 0)
+// constructor - properties should include: id (ex: 'one'), token (ex: '👩🏻'), wins (ex: [])
 // saveWinsToStorage
 // retrieveWinsFromStorage
-// takeTurn
+
 
 //
 // Create the class Player
 // Build out the class with its constructor / What properties are needed?
-// constructor - properties should include: name (ex: 'Human'), token (ex: '👩🏻'), wins (ex: 0)
+// constructor - properties should include: id (ex: 'one'), token (ex: '👩🏻'), wins (ex: [])
 // What does this class need to focus specifically on?
 // Methods required - how will they work?
 
@@ -30,4 +30,4 @@ class Player {
 module.exports = Player;
 
 
-//LEAVE NOTES WHERE NEEDED FOR ME
+//Local storage only needed to persist for wins: persist across page load refreshes 

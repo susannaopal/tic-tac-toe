@@ -20,3 +20,17 @@
 //eventlisterers and queries here to see what needs to be selected and when
 //functionality will come from here
 //WRITE LITTLE LITTLE CHUNKS
+
+//when a box is selected then it will need to be disabled -- how to do? review button disabling!
+
+
+
+//Global Variables 👇
+var wins = [];
+
+
+//QUERY SELECTORS 👇
+
+
+
+//FUNCTIONS & EVENT HANDLERS👇
