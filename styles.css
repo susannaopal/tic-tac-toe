@@ -31,33 +31,33 @@ main {
 }
 
 .game-board {
-
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 70%;
-      background: #e2fef4;
-      color: navy;
-      flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: center;
+  width: 70%;
+  background: #e2fef4;
+  color: navy;
+  flex-wrap: wrap;
 }
 
 
 .article-gameboard-grid {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  /* border: 3px solid red; */
-  /* height: 450px; */
-  width: 64%;
-  margin-left: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 250px;
+  margin-right: 270px;
+  /* border: 2px solid red; */
 }
 
-.center-panel{
+/* .center-panel{
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      flex-direction: column;
+      border: 2px solid black;
+      margin-left: auto;
+} */
 /* .a1,
 .a2,
 .a3,
@@ -72,7 +72,7 @@ main {
  width: 25px;
 } */
 
-.a1,
+/* .a1,
 .b1,
 .c1 {
   border-left: none;
@@ -94,8 +94,8 @@ main {
 .c1,
 .c2,
 .c3{
-  border-bottom: none;
-}
+  border-bottom: none; */
+/* } */
 
 
 div {
