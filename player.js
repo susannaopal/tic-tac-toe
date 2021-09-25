@@ -19,7 +19,7 @@ class Player {
     this.token = token;
     //if token = this class attribute then run this or this instead
     //the token could take a string or am emoji
-    this.wins = [];
+    this.numberOfWins = [];
     //project spec shows an empty array??
   }
   saveWinsToStorage(){

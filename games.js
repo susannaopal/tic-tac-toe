@@ -13,6 +13,7 @@ class Game {
     this.player1 = new Player ('player1');
     this.player2 = new Player ('player2');
     this.gameboard = [0,1,2,3,4,5,6,7,8];
+    this.winTracker = [[combo of win], [combo of win in each []]];
   }
 //break up into as many functions as needed
 //break up in way things are ordered
@@ -27,6 +28,7 @@ class Game {
   }
 
   addPlayersToken(){
+    //if spot available, can add a token
     //accessing the game board index spots (with an icon on the game board)
     //add a player's token
     //could possibly use dot notation to access the player's token
@@ -38,6 +40,7 @@ class Game {
 }
 
   trackGameboardData(){
+    //for loop here for the wins in the player class
     //tracking this as the game is played
     //need to know which box has been selected
     //how do we select the box?
