@@ -7,10 +7,18 @@
 // A way to reset the Game’s board to begin a new game*
 
 class Game {
-  constructor (player1, player2) {
-    this.player1 = player1;
-    this.player2 = player2;
+  constructor (player1, player2, gameboard) {
+//think about how this.p1 equals a new player
+    this.player1 = new Player ('player1');
+    this.player2 = new Player ('player2');
+    this.gameboard = gameboard;
   }
+
+  startAGame(){
+    //if player1
+    //if player 2
+  }
+
 
   trackGameboardData(){
 
@@ -21,7 +29,6 @@ class Game {
     //query a box with a variable to add eventlistener to then add a function
     //then use innerHTML to add the token to that box
   }
-
 }
 
 
