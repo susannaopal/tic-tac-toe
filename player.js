@@ -4,7 +4,7 @@
 // retrieveWinsFromStorage
 
 
-//
+
 // Create the class Player
 // Build out the class with its constructor / What properties are needed?
 // constructor - properties should include: id (ex: 'one'), token (ex: '👩🏻'), wins (ex: [])

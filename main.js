@@ -2,7 +2,7 @@
 
 //may need to connect the game and player class files here
 //instiatiate the classes here
-//review ROMCOM < instite the new book
+//review paired < instite the new poster
 
 //everything needs to go in here
 
@@ -30,6 +30,20 @@ var wins = [];
 
 
 //QUERY SELECTORS 👇
+var boxA1 = document.querySelector("#aOne");
+var boxA2 = document.querySelector("#aTwo");
+var boxA3 = document.querySelector("#aThree");
+var boxB1 = document.querySelector("#bOne");
+var boxB2 = document.querySelector("#bTwo");
+var boxB3 = document.querySelector("#bThree");
+var boxC1 = document.querySelector("#cOne");
+var boxC2 = document.querySelector("#cTwo");
+var boxC3 = document.querySelector("#cThree");
+
+
+
+
+
 
 
 
