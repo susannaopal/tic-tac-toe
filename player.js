@@ -17,9 +17,10 @@ class Player {
     this.id = id;
     //takes a string of a name
     this.token = token;
+    //if token = this class attribute then run this or this instead
     //the token could take a string or am emoji
     this.wins = [];
-    //project spec shows an empty array?? or is this zero?
+    //project spec shows an empty array??
   }
   saveWinsToStorage(){
   }
@@ -27,7 +28,6 @@ class Player {
   }
 }
 
-module.exports = Player;
 
 
 //Local storage only needed to persist for wins: persist across page load refreshes

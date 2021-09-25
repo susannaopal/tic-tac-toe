@@ -26,7 +26,7 @@
 
 
 //Global Variables 👇
-var wins = [];
+
 
 
 //QUERY SELECTORS 👇
