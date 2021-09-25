@@ -15,8 +15,7 @@ class Game {
 
 module.exports = Game;
 
-//this needs to interact LIKE Medusa (eventually the player instances will need to pass thru the constructor)
-//need two players pass through
+
 
 //ex: var namePlayer = class Player ({id: id, token: token, wins: [#]})
 
