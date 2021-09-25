@@ -31,9 +31,79 @@ main {
 }
 
 .game-board {
-  width: 70%;
-  background: #e2fef4;
-  color: navy;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 70%;
+      background: #e2fef4;
+      color: navy;
+      flex-wrap: wrap;
+}
+
+
+.article-gameboard-grid {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* border: 3px solid red; */
+  /* height: 450px; */
+  width: 64%;
+  margin-left: 40px;
+}
+
+.center-panel{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* .a1,
+.a2,
+.a3,
+.b1,
+.b2,
+.b3,
+.c1,
+.c2,
+.c3 {
+ border: 6px solid navy;
+ height:25px;;
+ width: 25px;
+} */
+
+.a1,
+.b1,
+.c1 {
+  border-left: none;
+
+}
+
+.a1,
+.a2,
+.a3 {
+  border-top: none;
+}
+
+.a3,
+.b3,
+.c3 {
+  border-right: none;
+}
+
+.c1,
+.c2,
+.c3{
+  border-bottom: none;
+}
+
+
+div {
+  border: 6px solid white;
+  border-image: linear-gradient(45deg, #c7e5d2, #134d71) 1;
+  height:140px;
+  width: 160px;
+
 }
 
 .buffalo-token,
@@ -45,10 +115,25 @@ main {
   margin: 50px;
 }
 
-h1, h2, h3{
+h1 {
+  /* margin: 10px; */
+  /* margin-bottom: 40px; */
+  /* padding: 15px; */
+}
+
+h2{
+  /* margin: 5px; */
+}
+
+/* h3{
   /* border: 5px solid blue; */
   margin: 10px;
+} */
+
+p {
+  font-size: 50px;
 }
+
 .hidden {
   display: none;
 }
