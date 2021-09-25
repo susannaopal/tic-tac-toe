@@ -46,7 +46,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, auto);
   width: 250px;
-  margin-right: 270px;
+  margin-right: 260px;
   /* border: 2px solid red; */
 }
 
