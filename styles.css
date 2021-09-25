@@ -50,6 +50,31 @@ main {
   /* border: 2px solid red; */
 }
 
+
+.a1,
+.a2,
+.a3 {
+  border-top: none;
+}
+
+.a1,
+.b1,
+.c1{
+  border-left: none;
+}
+
+.c1,
+.c2,
+.c3 {
+  border-bottom: none;
+}
+
+.a3,
+.b3,
+.c3{
+  border-right: none;
+}
+
 /* .center-panel{
   display: flex;
       justify-content: flex-end;
@@ -78,6 +103,8 @@ main {
   border-left: none;
 
 }
+
+
 
 .a1,
 .a2,
