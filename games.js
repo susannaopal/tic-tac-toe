@@ -7,21 +7,38 @@
 // A way to reset the Game’s board to begin a new game*
 
 class Game {
-  constructor (player1, player2, gameboard) {
+  constructor (player1, player2) {
 //think about how this.p1 equals a new player
+//can access between the two classes because of the way it is called below
     this.player1 = new Player ('player1');
     this.player2 = new Player ('player2');
-    this.gameboard = gameboard;
+    this.gameboard = [0,1,2,3,4,5,6,7,8];
   }
-
+//break up into as many functions as needed
+//break up in way things are ordered
   startAGame(){
     //if player1
     //if player 2
+    //if gameboard
+    //someone chooses a square
+    //change turns (functionality main file?)
+    //call add addPlayersToken
+    //callChangingTurings
   }
 
+  addPlayersToken(){
+    //accessing the game board index spots (with an icon on the game board)
+    //add a player's token
+    //could possibly use dot notation to access the player's token
+    //this.player.token
+  }
+
+  changeTurns(){
+  //function for change turns (functionality main file?)
+}
 
   trackGameboardData(){
-
+    //tracking this as the game is played
     //need to know which box has been selected
     //how do we select the box?
     //once a box is selected, how not let it be reselected
