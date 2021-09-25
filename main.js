@@ -23,27 +23,29 @@
 
 //when a box is selected then it will need to be disabled -- how to do? review button disabling!
 
+//anything we are manipulating goes in here but the classes are the data model (array in player class)
+
+
+// A TIMEOUT is used after a completed game to reset the board:
 
 
 //Global Variables 👇
-
+var game = new Game();
 
 
 //QUERY SELECTORS 👇
-var boxA1 = document.querySelector("#aOne");
-var boxA2 = document.querySelector("#aTwo");
-var boxA3 = document.querySelector("#aThree");
-var boxB1 = document.querySelector("#bOne");
-var boxB2 = document.querySelector("#bTwo");
-var boxB3 = document.querySelector("#bThree");
-var boxC1 = document.querySelector("#cOne");
-var boxC2 = document.querySelector("#cTwo");
-var boxC3 = document.querySelector("#cThree");
+// var boxA1 = document.querySelector("#aOne");
+// var boxA2 = document.querySelector("#aTwo");
+// var boxA3 = document.querySelector("#aThree");
+// var boxB1 = document.querySelector("#bOne");
+// var boxB2 = document.querySelector("#bTwo");
+// var boxB3 = document.querySelector("#bThree");
+// var boxC1 = document.querySelector("#cOne");
+// var boxC2 = document.querySelector("#cTwo");
+// var boxC3 = document.querySelector("#cThree");
 
 
-
-
-
+//EVENT LISTENERS👇
 
 
 

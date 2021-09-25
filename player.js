@@ -15,7 +15,7 @@
 class Player {
   constructor (id, token) {
     this.id = id;
-    //takes a string of a name
+    //this players ID uses 'this' keyword
     this.token = token;
     //if token = this class attribute then run this or this instead
     //the token could take a string or am emoji

@@ -11,6 +11,15 @@ class Game {
     this.player1 = player1;
     this.player2 = player2;
   }
+
+  trackGameboardData(){
+    //need to know which box has been selected
+    //how do we select the box?
+    //once a box is selected, how not let it be reselected
+    //event.target?
+    //query a box with a variable to add eventlistener to then add a function
+    //then use innerHTML to add the token to that box
+  }
 };
 
 
@@ -21,8 +30,7 @@ class Game {
 //1 new instance of the game is 2 new instances of the player
 
 
-// A TIMEOUT is used after a completed game to reset the board:
-// does this get done here or in main?
+
 
 
 //should conditionals be in here?
