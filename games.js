@@ -13,6 +13,7 @@ class Game {
   }
 
   trackGameboardData(){
+
     //need to know which box has been selected
     //how do we select the box?
     //once a box is selected, how not let it be reselected
@@ -20,7 +21,8 @@ class Game {
     //query a box with a variable to add eventlistener to then add a function
     //then use innerHTML to add the token to that box
   }
-};
+
+}
 
 
 

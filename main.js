@@ -30,23 +30,40 @@
 
 
 //Global Variables 👇
-var game = new Game();
+// var game = new Game();
 
 
 //QUERY SELECTORS 👇
-// var boxA1 = document.querySelector("#aOne");
-// var boxA2 = document.querySelector("#aTwo");
-// var boxA3 = document.querySelector("#aThree");
-// var boxB1 = document.querySelector("#bOne");
-// var boxB2 = document.querySelector("#bTwo");
-// var boxB3 = document.querySelector("#bThree");
-// var boxC1 = document.querySelector("#cOne");
-// var boxC2 = document.querySelector("#cTwo");
-// var boxC3 = document.querySelector("#cThree");
-
+var boxA1 = document.querySelector("#aOne");
+var boxA2 = document.querySelector("#aTwo");
+var boxA3 = document.querySelector("#aThree");
+var boxB1 = document.querySelector("#bOne");
+var boxB2 = document.querySelector("#bTwo");
+var boxB3 = document.querySelector("#bThree");
+var boxC1 = document.querySelector("#cOne");
+var boxC2 = document.querySelector("#cTwo");
+var boxC3 = document.querySelector("#cThree");
+var gameboardGrid = document.querySelector("#gameboardGrid");
+var buffaloToken = document.querySelector("#buffaloToken");
+var mountainToken = document.querySelector("#mountainToken");
 
 //EVENT LISTENERS👇
 
+gameboardGrid.addEventListener('click', selectGridBlock);
 
 
 //FUNCTIONS & EVENT HANDLERS👇
+
+function selectGridBlock() {
+  if (event.target.classList.contains("block")) {
+    buffaloToken.classList.toggle("hidden");
+    mountainToken.classList.toggle("hidden");
+    boxA1.innerHTML = `
+    <div class="a1 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
+    `
+//     //determine which block is clicked
+//     //adding or hiding classes
+//     //if player 1 is true, play this token, else refuse to let other token play
+//
+ }
+};
