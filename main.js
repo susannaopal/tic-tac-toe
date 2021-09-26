@@ -35,7 +35,7 @@
 
 
 //Global Variables 👇
-var game = new Game();
+var game = new Game()
 
 
 //QUERY SELECTORS 👇
@@ -73,9 +73,11 @@ function playTokenOnBlock(event){
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
   game.clickBlock(theClickedBlock)
+  document.querySelector(`.${theClickedBlock}`).disabled = true;
 }
-//
-//call start a games
+
+
+//one want to start a new game if someone wins or a draw
 
 
 

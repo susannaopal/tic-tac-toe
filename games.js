@@ -67,6 +67,8 @@
 
 
 
+// each player would have their own array and loop through the possible win conditions and see if that includes
+
 
 class Game {
   constructor () {
@@ -75,7 +77,7 @@ class Game {
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
 //change these to string arrays  for all of them
-    this.winTracker = [["button0", "button1", "button2"], ["button0", "button4", "button8"], ["button6", "button4", "button2"], ["button1", "button4", "button7"], ["button3", "button4", "button5"], ["button6", "button7", "button8"],["button0", "button3", "button6"], ["button2", "button5", "button8"]];
+    this.winConditions = [["button0", "button1", "button2"], ["button0", "button4", "button8"], ["button6", "button4", "button2"], ["button1", "button4", "button7"], ["button3", "button4", "button5"], ["button6", "button7", "button8"],["button0", "button3", "button6"], ["button2", "button5", "button8"]];
     this.currentPlayer = this.player1
   //below reset the board with below
     this.clicks = 0;
@@ -90,7 +92,7 @@ class Game {
   addPlayerToken(theClickedBlock){
     this.gameboard[theClickedBlock] = this.currentPlayer
     this.changeTurn()
-    console.log("this.gameboard", this.gameboard)
+    // console.log("this.gameboard", this.gameboard)
   }
 
   changeTurn(){
@@ -101,13 +103,32 @@ class Game {
     }
 }
 
+  getPlayerChoices() {
+    var gameboardValues = Object.values(this.gameboard)
+    var player1Choices = [];
+    var player2Choices = [];
+    for (var i= 0; i < gameboardValues.length; i++){
+      if(gameboardValues[i].id === 'player1') {
+        player1Choices.push(i)
+      } else {
+        player2Choices.push(i)
+      }
+    }
+    
+  }
+
+
   trackGameboardData(){
-    console.logs in here to determine if working or not
-    for (var i = 0; i < this.winTracker.length; i++){
-      if (this.currentPlayer.numberOfWins.includes(this.winTracker[i][0]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][1]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][2])) {
+    console.log("this working?")
+
+    // console.logs in here to determine if working or not
+    for (var i = 0; i < this.winConditions.length; i++){
+      if (this.currentPlayer.numberOfWins.includes(this.winConditions[i][0]) && this.currentPlayer.numberOfWins.includes(this.winConditions[i][1]) && this.currentPlayer.numberOfWins.includes(this.winConditions[i][2])) {
         this.currentPlayer.counterOfWins ++
         this.clicks = 0
         this.currentPlayer.winner = true
+        console.log("this still working?")
+
     }
     this.changeTurn()
   }
