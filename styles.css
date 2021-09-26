@@ -43,12 +43,39 @@ main {
 
 .article-gameboard-grid {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  width: 250px;
-  margin-right: 260px;
+    grid-template-columns: repeat(3, auto);
+    width: 250px;
+    margin-right: 234px;
+    margin-top: auto;
+    margin-bottom: 20px;
   /* border: 2px solid red; */
 }
 
+
+
+.button0,
+.button1,
+.button2{
+  border-top: none;
+}
+
+.button0,
+.button3,
+.button6{
+  border-left: none;
+}
+
+.button6,
+.button7,
+.button8{
+  border-bottom: none;
+}
+
+.button2,
+.button5,
+.button8{
+  border-right: none;
+}
 
 /* .a1,
 .a2,
@@ -126,31 +153,31 @@ main {
 /* //below is now the buttons stufff */
 button {
   border: 6px solid white;
-  /* color: #e2fef4 */
+  background-color: #e2fef4;
   border-image: linear-gradient(45deg, #c7e5d2, #134d71) 1;
   height:140px;
   width: 160px;
   /* border: none; */
-
 }
 
 
-/* .buffalo-token,
+.buffalo-token,
 .mountain-token{
   border-radius: 10px;
-  font-size: 50px;
+  font-size: 3em;
+  /* font-size: 50px; */
   /* border: solid orange; */
-  margin: 50px;
-} */
+  /* margin: 50px; */
+}
 
 .buffalo-turn,
 .mountain-turn{
   margin-bottom: 0;
-  font-size: 3em;
+  font-size: 1em;
 }
 
 h1 {
-  /* margin: 10px; */
+  margin: auto;
   /* margin-bottom: 40px; */
   /* padding: 15px; */
   /* border: 2px solid pink; */
