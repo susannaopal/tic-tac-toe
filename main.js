@@ -29,54 +29,112 @@
 // A TIMEOUT is used after a completed game to reset the board:
 
 
+// EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
+//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token
+
+
+
 //Global Variables 👇
-// var game = new Game();
+var game = new Game();
 
 
 //QUERY SELECTORS 👇
-var boxA1 = document.querySelector("#aOne");
-var boxA2 = document.querySelector("#aTwo");
-var boxA3 = document.querySelector("#aThree");
-var boxB1 = document.querySelector("#bOne");
-var boxB2 = document.querySelector("#bTwo");
-var boxB3 = document.querySelector("#bThree");
-var boxC1 = document.querySelector("#cOne");
-var boxC2 = document.querySelector("#cTwo");
-var boxC3 = document.querySelector("#cThree");
+//do i need a query selector all for button? or are the individually called?
+//what will need to be grabbed for a click event?
+//is it distinguishing which button is clicked or is it listening just for a button?
+//what conditionals are needed for the button in order to play the token?
+//
+// var button = document.querySelectorAll(".button")
+// var button0 = document.querySelector("#zero");
+// var button1 = document.querySelector("#one");
+// var button2 = document.querySelector("#two");
+// var button3 = document.querySelector("#three");
+// var button4 = document.querySelector("#four");
+// var button5 = document.querySelector("#five");
+// var button6 = document.querySelector("#six");
+// var button7 = document.querySelector("#seven");
+// var button8 = document.querySelector("#eight");
 var gameboardGrid = document.querySelector("#gameboardGrid");
 var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
 
 //EVENT LISTENERS👇
 
-// gameboardGrid.addEventListener('click', selectGridBlock);
+gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
 //FUNCTIONS & EVENT HANDLERS👇
 
-// function selectGridBlock() {
-//   if (event.target.classList.contains("block")) {
-//     buffaloToken.classList.toggle("hidden");
-//     mountainToken.classList.toggle("hidden");
-//     boxA1.innerHTML = `
-//     <div class="a1 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
+function playTokenOnBlock(event){
+  var theClickedBlock = event.target.classList[0]
+  if (game.player1 === game.currentPlayer) {
+  document.querySelector(`.${theClickedBlock}`).innerHTML = `🦬`
+} else {
+  document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
+}
+  game.clickBlock(theClickedBlock)
+}
+//
+//call start a games
+
+
+
+
+// function playTokenOnBlock(){
+//   startAGame()
+// //does this need an event prevent?
+// //not working with it, but if need it then add into param
+//   // event.preventDefault()
+//
+//   //startAGame() to place a token does this need to be called first
+//   //it is checking to see if the token box is free and if so
+//   //then a token can be played on that clicked square
+//   if (button0.checked) {
+//     //need to return the current players token?
+//     buffaloToken.classList.add("hidden");
+//     mountainToken.classList.hide("hidden")
+//     button0.innerText = `
+//     <button class="button0 block" id="zero"> <img class="buffalo-token" alt="buffalo-cartoon">🦬</button>
+//    `
+//   } if (button1.checked){
+//     //need to return the current players token?
+//   } if (button2.checked){
+//     //need to return the current players token?
+//   } if (button3.checked){
+//   //need to return the current players token?
+//   } if (button4.checked){
+//     //need to return the current players token?
+//   } if (button5.checked){
+//       //need to return the current players token?
+//   } if (button6.checked){
+//     //need to return the current players token?
+//   } if (button7.checked){
+//     //need to return the current players token?
+//   }if (button8.checked){
+//     //need to return the current players token?
+//   }
+//   // addPlayerToken()
+// }
+
+
+//conditionals for a function to determine if that particular block / button has been theClickedBlock
+//how to check if the button has been clicked?
+//once clicked, placing token (see game)
+//
+
+
+// function playTokenOnBlock() {
+//   if (event.target.classList.contains("button")) {
+//     buffaloToken.classList.add("hidden");
+//     mountainToken.classList.hide("hidden");
+//     button0.innerHTML = `
+//     <button class="button0 block" id="zero"> <img class="buffalo-token" alt="buffalo-cartoon">🦬</button>
 //     `
-    // boxA2.innerHTML = `
-
-    // <div class="a2 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
-    // `
-    // boxA3.innerHTML = `
-    // <div class="a3 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
-    // `
-//     //determine which block is clicked
-//     //adding or hiding classes
-//     //if player 1 is true, play this token, else refuse to let other token play
-//
-//  }
+//   }
 // };
-
-
-
-//
-// EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
-//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token
+    //
+    // determine which block is clicked
+    // adding or hiding classes
+    // if player 1 is true, play this token, else refuse to let other token play
+    //
+    //

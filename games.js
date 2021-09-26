@@ -46,7 +46,7 @@
 //changeTurn notes:
 //function for change turns (functionality main file?)
 //how to changeTurns
-//need to check if someone has played a token on a theClickedSquare
+//need to check if someone has played a token on a theClickedBlock
 //need to check if either player has clicked a button and if so, then it goes to the other player
 
 
@@ -69,28 +69,28 @@
 
 
 class Game {
-  constructor (player1, player2) {
+  constructor () {
+    // console.log("i am clicking here")
     this.player1 = new Player ('player1', '🦬');
     this.player2 = new Player ('player2', '🏔');
-    this.gameboard = [0,1,2,3,4,5,6,7,8];
-    this.winTracker = [[0,1,2], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
-    this.currentPlayer = player1
+    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
+//change these to string arrays  for all of them
+    this.winTracker = [["button0", "button1","button2"], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
+    this.currentPlayer = this.player1
   //below reset the board with below
     this.clicks = 0;
   }
 
-  startAGame(theClickedSquare){
-    if (this.player1.token !== this.gameboard[theClickedSquare]){
-      this.addPlayerToken(theClickedSquare, changeTurn);
-    } else if (this.player2.token !== this.gameboard[theClickedSquare]){
-      this.addPlayerToken(theClickedSquare, changeTurn);
+  clickBlock(theClickedBlock){
+    if (!this.gameboard[theClickedBlock]){
+      this.addPlayerToken(theClickedBlock);
     }
   }
 
-  addPlayerToken(theClickedSquare, whoeverIsPlaying){
-    this.gameBoard.splice(theClickedSquare, 1, whoeverIsPlaying.token)
-    whoeverIsPlaying.numberOfWins.push(parseInt(theClickedSquare))
-    this.trackGameboardData()
+  addPlayerToken(theClickedBlock){
+    this.gameboard[theClickedBlock] = this.currentPlayer
+    this.changeTurn()
+    console.log("this.gameboard", this.gameboard)
   }
 
   changeTurn(){
@@ -102,6 +102,7 @@ class Game {
 }
 
   trackGameboardData(){
+    console.logs in here to determine if working or not
     for (var i = 0; i < this.winTracker.length; i++){
       if (this.currentPlayer.numberOfWins.includes(this.winTracker[i][0]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][1]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][2])) {
         this.currentPlayer.counterOfWins ++
@@ -111,7 +112,11 @@ class Game {
     this.changeTurn()
   }
 }
+
   checkForDraw() {
+    if (this.clicks === 9) {
+      this.clicks = 0;
+    }
     //check if the click count is === 9 (# of squares)
     //reset it to the beginning  || reassign it to 0
     // say that the current player is at a draw
@@ -119,6 +124,9 @@ class Game {
     this.currentPlayer.draw = true;
   }
 
+
+//does the timeout functionality need to come here or in main?
+//and this would be called there?
   resetGame(){
     this.currentPlayer.numberOfWins = [];
     this.currentPlayer.winner = false;
