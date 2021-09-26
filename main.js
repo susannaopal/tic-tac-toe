@@ -77,6 +77,7 @@ function playTokenOnBlock(event){
 }
 
 
+
 //one want to start a new game if someone wins or a draw
 
 
