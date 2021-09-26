@@ -30,7 +30,7 @@
 
 
 //Global Variables 👇
-var game = new Game();
+// var game = new Game();
 
 
 //QUERY SELECTORS 👇
@@ -79,4 +79,4 @@ var mountainToken = document.querySelector("#mountainToken");
 
 //
 // EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
-//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token 
+//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token
