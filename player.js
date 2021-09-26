@@ -21,7 +21,11 @@ class Player {
     //if token = this class attribute then run this or this instead
     //the token could take a string or am emoji
     this.numberOfWins = [];
+    //ultimately this below goes for local storage counting of wins
+    this.counterOfWins = 0;
     //project spec shows an empty array??
+    this.winner = false;
+    this.draw = false;
   }
   saveWinsToStorage(){
   }

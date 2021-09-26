@@ -1,3 +1,7 @@
+//this is just class to class interaction!!!
+//DON'T FREAK OUT!!!!!
+//<3
+
 // A Game should include:
 // Two Player instances
 // A way to keep track of the data for the game board
@@ -66,8 +70,9 @@ class Game {
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = [0,1,2,3,4,5,6,7,8];
     this.winTracker = [[0,1,2], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
-    this.draws = false;
     this.currentPlayer = player1
+  //below reset the board with below
+    this.clicks = 0;
   }
 
   startAGame(theClickedSquare){
@@ -98,14 +103,25 @@ class Game {
     //going through the this.wins array of arrays and checking the mini arrays index 012 spots
 //don't mix up the actual #s with the indexes of the mini arrays
     for (var i = 0; i < this.winTracker.length; i++){
-      if (this.currentPlayer.includes(this.winTracker[i][0]) && this.currentPlayer.includes(this.winTracker[i][1]) && this.currentPlayer.includes(this.winTracker[i][2]))
+      if (this.currentPlayer.includes(this.winTracker[i][0]) && this.currentPlayer.includes(this.winTracker[i][1]) && this.currentPlayer.includes(this.winTracker[i][2])) {
+        this.currentPlayer.counterOfWins ++
+        this.clicks = 0
+        this.currentPlayer.winner = true
     }
     this.changeTurn()
   }
 }
+  checkForDraw() {
+    //check if the click count is === 9 (# of squares)
+    //reset it to the beginning  || reassign it to 0
+    // say that the current player is at a draw
+    this.currentPlayer.draw = true;
+  }
 
+  resetGame(){
+  }
+};
 
-checkfordraw
 
 //ex: var namePlayer = class Player ({id: id, token: token, wins: [#]})
 
