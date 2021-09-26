@@ -60,6 +60,10 @@
 //query a box with a variable to add eventlistener to then add a function
 //then use innerHTML to add the token to that box
 //if not a win then need to change turns
+//cyle thru win tracker and the number of wins (both classes and each player and see if either player has played through either conditions)
+//forloop with conditionals
+//going through the this.wins array of arrays and checking the mini arrays index 012 spots
+//don't mix up the actual #s with the indexes of the mini arrays
 
 
 
@@ -98,10 +102,6 @@ class Game {
 }
 
   trackGameboardData(){
-    //cyle thru win tracker and the number of wins (both classes and each player and see if either player has played through either conditions)
-    //forloop with conditionals
-    //going through the this.wins array of arrays and checking the mini arrays index 012 spots
-//don't mix up the actual #s with the indexes of the mini arrays
     for (var i = 0; i < this.winTracker.length; i++){
       if (this.currentPlayer.numberOfWins.includes(this.winTracker[i][0]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][1]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][2])) {
         this.currentPlayer.counterOfWins ++
@@ -115,7 +115,7 @@ class Game {
     //check if the click count is === 9 (# of squares)
     //reset it to the beginning  || reassign it to 0
     // say that the current player is at a draw
-    
+
     this.currentPlayer.draw = true;
   }
 
