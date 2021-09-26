@@ -41,6 +41,10 @@
 
 //changeTurn notes:
 //function for change turns (functionality main file?)
+//how to changeTurns
+//need to check if someone has played a token on a theClickedSquare
+//need to check if either player has clicked a button and if so, then it goes to the other player
+
 
 //trackGameboardData:
 //for loop here for the wins in the player class
@@ -63,6 +67,7 @@ class Game {
     this.gameboard = [0,1,2,3,4,5,6,7,8];
     this.winTracker = [[0,1,2], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
     this.draws = false;
+    this.currentPlayer = player1
   }
 
   startAGame(theClickedSquare){
@@ -80,9 +85,15 @@ class Game {
   }
 
   changeTurn(){
+    if (this.currentPlayer === this.player1){
+      this.currentPlayer = this.player2
+    } else if (this.currentPlayer === this.player2){
+      this.currentPlayer = this.player1
+    }
 }
 
   trackGameboardData(){
+    
     this.changeTurn()
   }
 }

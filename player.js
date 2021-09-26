@@ -14,6 +14,7 @@
 
 class Player {
   constructor (id, token) {
+    //ID with local storage stuff
     this.id = id;
     //this players ID uses 'this' keyword
     this.token = token;
