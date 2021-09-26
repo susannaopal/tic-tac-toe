@@ -69,32 +69,28 @@
 
 
 class Game {
-  constructor (player1, player2) {
+  constructor () {
     // console.log("i am clicking here")
     this.player1 = new Player ('player1', '🦬');
     this.player2 = new Player ('player2', '🏔');
-    this.gameboard = [0,1,2,3,4,5,6,7,8];
-    this.winTracker = [[0,1,2], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
-    this.currentPlayer = player1
+    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
+//change these to string arrays  for all of them
+    this.winTracker = [["button0", "button1","button2"], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
+    this.currentPlayer = this.player1
   //below reset the board with below
     this.clicks = 0;
   }
-//currently throwing an error to try and test it:
-// "VM6596:1 Uncaught ReferenceError: startAGame is not defined
-//     at <anonymous>:1:1"
-  startAGame(theClickedBlock){
-    // console.log("1111i am clicking here1")
-    if (this.player1.token !== this.gameboard[theClickedBlock]){
-      this.addPlayerToken(theClickedBlock, changeTurn);
-    } else if (this.player2.token !== this.gameboard[theClickedBlock]){
-      this.addPlayerToken(theClickedBlock, changeTurn);
+
+  clickBlock(theClickedBlock){
+    if (!this.gameboard[theClickedBlock]){
+      this.addPlayerToken(theClickedBlock);
     }
   }
 
-  addPlayerToken(theClickedBlock, whoeverIsPlaying){
-    this.gameBoard.splice(theClickedBlock, 1, whoeverIsPlaying.token)
-    whoeverIsPlaying.numberOfWins.push(parseInt(theClickedBlock))
-    this.trackGameboardData()
+  addPlayerToken(theClickedBlock){
+    this.gameboard[theClickedBlock] = this.currentPlayer
+    this.changeTurn()
+    console.log("this.gameboard", this.gameboard)
   }
 
   changeTurn(){
@@ -106,6 +102,7 @@ class Game {
 }
 
   trackGameboardData(){
+    console.logs in here to determine if working or not
     for (var i = 0; i < this.winTracker.length; i++){
       if (this.currentPlayer.numberOfWins.includes(this.winTracker[i][0]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][1]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][2])) {
         this.currentPlayer.counterOfWins ++

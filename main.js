@@ -45,15 +45,15 @@ var game = new Game();
 //what conditionals are needed for the button in order to play the token?
 //
 // var button = document.querySelectorAll(".button")
-var button0 = document.querySelector("#zero");
-var button1 = document.querySelector("#one");
-var button2 = document.querySelector("#two");
-var button3 = document.querySelector("#three");
-var button4 = document.querySelector("#four");
-var button5 = document.querySelector("#five");
-var button6 = document.querySelector("#six");
-var button7 = document.querySelector("#seven");
-var button8 = document.querySelector("#eight");
+// var button0 = document.querySelector("#zero");
+// var button1 = document.querySelector("#one");
+// var button2 = document.querySelector("#two");
+// var button3 = document.querySelector("#three");
+// var button4 = document.querySelector("#four");
+// var button5 = document.querySelector("#five");
+// var button6 = document.querySelector("#six");
+// var button7 = document.querySelector("#seven");
+// var button8 = document.querySelector("#eight");
 var gameboardGrid = document.querySelector("#gameboardGrid");
 var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
@@ -65,42 +65,56 @@ gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 //FUNCTIONS & EVENT HANDLERS👇
 
-
-function playTokenOnBlock(){
-  startAGame()
-//does this need an event prevent?
-//not working with it, but if need it then add into param
-  // event.preventDefault()
-
-  //startAGame() to place a token does this need to be called first
-  //it is checking to see if the token box is free and if so
-  //then a token can be played on that clicked square
-  if (button0.checked) {
-    //need to return the current players token?
-    buffaloToken.classList.add("hidden");
-    mountainToken.classList.hide("hidden")
-    button0.innerHTML = `
-    <button class="button0 block" id="zero"> <img class="buffalo-token" alt="buffalo-cartoon">🦬</button>
-   `
-  } if (button1.checked){
-    //need to return the current players token?
-  } if (button2.checked){
-    //need to return the current players token?
-  } if (button3.checked){
-  //need to return the current players token?
-  } if (button4.checked){
-    //need to return the current players token?
-  } if (button5.checked){
-      //need to return the current players token?
-  } if (button6.checked){
-    //need to return the current players token?
-  } if (button7.checked){
-    //need to return the current players token?
-  }if (button8.checked){
-    //need to return the current players token?
-  }
-  // addPlayerToken()
+function playTokenOnBlock(event){
+  var theClickedBlock = event.target.classList[0]
+  if (game.player1 === game.currentPlayer) {
+  document.querySelector(`.${theClickedBlock}`).innerHTML = `🦬`
+} else {
+  document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
+  game.clickBlock(theClickedBlock)
+}
+//
+//call start a games
+
+
+
+
+// function playTokenOnBlock(){
+//   startAGame()
+// //does this need an event prevent?
+// //not working with it, but if need it then add into param
+//   // event.preventDefault()
+//
+//   //startAGame() to place a token does this need to be called first
+//   //it is checking to see if the token box is free and if so
+//   //then a token can be played on that clicked square
+//   if (button0.checked) {
+//     //need to return the current players token?
+//     buffaloToken.classList.add("hidden");
+//     mountainToken.classList.hide("hidden")
+//     button0.innerText = `
+//     <button class="button0 block" id="zero"> <img class="buffalo-token" alt="buffalo-cartoon">🦬</button>
+//    `
+//   } if (button1.checked){
+//     //need to return the current players token?
+//   } if (button2.checked){
+//     //need to return the current players token?
+//   } if (button3.checked){
+//   //need to return the current players token?
+//   } if (button4.checked){
+//     //need to return the current players token?
+//   } if (button5.checked){
+//       //need to return the current players token?
+//   } if (button6.checked){
+//     //need to return the current players token?
+//   } if (button7.checked){
+//     //need to return the current players token?
+//   }if (button8.checked){
+//     //need to return the current players token?
+//   }
+//   // addPlayerToken()
+// }
 
 
 //conditionals for a function to determine if that particular block / button has been theClickedBlock
