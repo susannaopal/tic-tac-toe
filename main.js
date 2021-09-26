@@ -29,11 +29,22 @@
 // A TIMEOUT is used after a completed game to reset the board:
 
 
+// EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
+//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token
+
+
+
 //Global Variables 👇
 var game = new Game();
 
 
 //QUERY SELECTORS 👇
+//do i need a query selector all for button? or are the individually called?
+//what will need to be grabbed for a click event?
+//is it distinguishing which button is clicked or is it listening just for a button?
+//what conditionals are needed for the button in order to play the token?
+//
+var button = document.querySelectorAll(".button")
 var button0 = document.querySelector("#zero");
 var button1 = document.querySelector("#one");
 var button2 = document.querySelector("#two");
@@ -44,8 +55,8 @@ var button6 = document.querySelector("#six");
 var button7 = document.querySelector("#seven");
 var button8 = document.querySelector("#eight");
 var gameboardGrid = document.querySelector("#gameboardGrid");
-var buffaloToken = document.querySelector("#buffaloToken");
-var mountainToken = document.querySelector("#mountainToken");
+// var buffaloToken = document.querySelector("#buffaloToken");
+// var mountainToken = document.querySelector("#mountainToken");
 
 //EVENT LISTENERS👇
 
@@ -78,5 +89,3 @@ var mountainToken = document.querySelector("#mountainToken");
 
 
 //
-// EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
-//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token
