@@ -24,7 +24,7 @@ class Player {
   }
   saveWinsToStorage(){
   }
-  retrieveWinsFromStorage () {
+  retrieveWinsFromStorage (){
   }
 }
 

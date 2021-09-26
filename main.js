@@ -72,5 +72,11 @@ var mountainToken = document.querySelector("#mountainToken");
 //     //adding or hiding classes
 //     //if player 1 is true, play this token, else refuse to let other token play
 //
- }
-};
+//  }
+// };
+
+
+
+//
+// EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
+//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token 
