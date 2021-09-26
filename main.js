@@ -30,19 +30,19 @@
 
 
 //Global Variables 👇
-// var game = new Game();
+var game = new Game();
 
 
 //QUERY SELECTORS 👇
-var boxA1 = document.querySelector("#aOne");
-var boxA2 = document.querySelector("#aTwo");
-var boxA3 = document.querySelector("#aThree");
-var boxB1 = document.querySelector("#bOne");
-var boxB2 = document.querySelector("#bTwo");
-var boxB3 = document.querySelector("#bThree");
-var boxC1 = document.querySelector("#cOne");
-var boxC2 = document.querySelector("#cTwo");
-var boxC3 = document.querySelector("#cThree");
+var button0 = document.querySelector("#zero");
+var button1 = document.querySelector("#one");
+var button2 = document.querySelector("#two");
+var button3 = document.querySelector("#three");
+var button4 = document.querySelector("#four");
+var button5 = document.querySelector("#five");
+var button6 = document.querySelector("#six");
+var button7 = document.querySelector("#seven");
+var button8 = document.querySelector("#eight");
 var gameboardGrid = document.querySelector("#gameboardGrid");
 var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");

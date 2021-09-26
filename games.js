@@ -112,6 +112,9 @@ class Game {
   }
 }
   checkForDraw() {
+    if (this.clicks === 9) {
+      this.clicks = 0;
+    }
     //check if the click count is === 9 (# of squares)
     //reset it to the beginning  || reassign it to 0
     // say that the current player is at a draw
