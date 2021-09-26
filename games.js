@@ -93,13 +93,19 @@ class Game {
 }
 
   trackGameboardData(){
-    
+    //cyle thru win tracker and the number of wins (both classes and each player and see if either player has played through either conditions)
+    //forloop with conditionals
+    //going through the this.wins array of arrays and checking the mini arrays index 012 spots
+//don't mix up the actual #s with the indexes of the mini arrays
+    for (var i = 0; i < this.winTracker.length; i++){
+      if (this.currentPlayer.includes(this.winTracker[i][0]) && this.currentPlayer.includes(this.winTracker[i][1]) && this.currentPlayer.includes(this.winTracker[i][2]))
+    }
     this.changeTurn()
   }
 }
 
 
-
+checkfordraw
 
 //ex: var namePlayer = class Player ({id: id, token: token, wins: [#]})
 
