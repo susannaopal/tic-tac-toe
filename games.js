@@ -13,7 +13,9 @@ class Game {
     this.player1 = new Player ('player1');
     this.player2 = new Player ('player2');
     this.gameboard = [0,1,2,3,4,5,6,7,8];
-    this.winTracker = [[combo of win], [combo of win in each []]];
+    this.winTracker = [[0,1,2], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
+    this.draws = false;
+    //start game as a false draw and only be true if that is correct
   }
 //break up into as many functions as needed
 //break up in way things are ordered
@@ -29,6 +31,7 @@ class Game {
 
   addPlayersToken(){
     //if spot available, can add a token
+
     //accessing the game board index spots (with an icon on the game board)
     //add a player's token
     //could possibly use dot notation to access the player's token
