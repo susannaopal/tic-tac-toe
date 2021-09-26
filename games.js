@@ -85,7 +85,7 @@ class Game {
 
   addPlayerToken(theClickedSquare, whoeverIsPlaying){
     this.gameBoard.splice(theClickedSquare, 1, whoeverIsPlaying.token)
-    whoeverIsPlaying.NumberOfWins.push(parseInt(theClickedSquare))
+    whoeverIsPlaying.numberOfWins.push(parseInt(theClickedSquare))
     this.trackGameboardData()
   }
 
@@ -103,7 +103,7 @@ class Game {
     //going through the this.wins array of arrays and checking the mini arrays index 012 spots
 //don't mix up the actual #s with the indexes of the mini arrays
     for (var i = 0; i < this.winTracker.length; i++){
-      if (this.currentPlayer.includes(this.winTracker[i][0]) && this.currentPlayer.includes(this.winTracker[i][1]) && this.currentPlayer.includes(this.winTracker[i][2])) {
+      if (this.currentPlayer.numberOfWins.includes(this.winTracker[i][0]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][1]) && this.currentPlayer.numberOfWins.includes(this.winTracker[i][2])) {
         this.currentPlayer.counterOfWins ++
         this.clicks = 0
         this.currentPlayer.winner = true
@@ -115,10 +115,14 @@ class Game {
     //check if the click count is === 9 (# of squares)
     //reset it to the beginning  || reassign it to 0
     // say that the current player is at a draw
+    
     this.currentPlayer.draw = true;
   }
 
   resetGame(){
+    this.currentPlayer.numberOfWins = [];
+    this.currentPlayer.winner = false;
+    this.currentPlayer.draw = false;
   }
 };
 
