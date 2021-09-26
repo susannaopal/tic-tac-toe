@@ -103,7 +103,7 @@ class Game {
       this.currentPlayer = this.player1
     }
 }
-
+//re-revjew object values
   getPlayerChoices() {
     var gameboardValues = Object.values(this.gameboard)
     console.log(gameboardValues)
@@ -124,6 +124,7 @@ class Game {
 
 
   // currentPlayerChoices.includes(this.winConditions[i])
+  // below worked but cannot use:
   // this.winConditions[i].every(num => currentPlayerChoices.includes(num)
 
   checkForWin(currentPlayerChoices){
