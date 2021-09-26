@@ -50,7 +50,7 @@ main {
 }
 
 
-.a1,
+/* .a1,
 .a2,
 .a3 {
   border-top: none;
@@ -72,7 +72,7 @@ main {
 .b3,
 .c3{
   border-right: none;
-}
+} */
 
 /* .center-panel{
   display: flex;
@@ -124,11 +124,13 @@ main {
 /* } */
 
 /* //below is now the buttons stufff */
-div {
+button {
   border: 6px solid white;
+  /* color: #e2fef4 */
   border-image: linear-gradient(45deg, #c7e5d2, #134d71) 1;
   height:140px;
   width: 160px;
+  /* border: none; */
 
 }
 
