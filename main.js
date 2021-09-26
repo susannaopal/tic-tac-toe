@@ -60,32 +60,66 @@ var gameboardGrid = document.querySelector("#gameboardGrid");
 
 //EVENT LISTENERS👇
 
-// gameboardGrid.addEventListener('click', selectGridBlock);
+gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
 //FUNCTIONS & EVENT HANDLERS👇
 
-// function selectGridBlock() {
-//   if (event.target.classList.contains("block")) {
-//     buffaloToken.classList.toggle("hidden");
-//     mountainToken.classList.toggle("hidden");
-//     boxA1.innerHTML = `
-//     <div class="a1 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
-//     `
-    // boxA2.innerHTML = `
 
-    // <div class="a2 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
-    // `
-    // boxA3.innerHTML = `
-    // <div class="a3 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
-    // `
-//     //determine which block is clicked
-//     //adding or hiding classes
-//     //if player 1 is true, play this token, else refuse to let other token play
+// function playTokenOnBlock(){
+// //does this need an event prevent?
+// //not working with it, but if need it then add into param
+//   // event.preventDefault()
 //
-//  }
-// };
+//   //startAGame() to place a token does this need to be called first
+//   //it is checking to see if the token box is free and if so
+//   //then a token can be played on that clicked square
+//   if (button0.checked) {
+//     //need to return the current players token?
+//     buffaloToken.classList.add("hidden");
+//     mountainToken.classList.hide("hidden")
+//     button0.innerHTML = `
+//     <button class="button0 block" id="zero"> <img class="buffalo-token" alt="buffalo-cartoon">🦬</button>
+//    `
+//   } if (button1.checked){
+//     //need to return the current players token?
+//   } if (button2.checked){
+//     //need to return the current players token?
+//   } if (button3.checked){
+//   //need to return the current players token?
+//   } if (button4.checked){
+//     //need to return the current players token?
+//   } if (button5.checked){
+//       //need to return the current players token?
+//   } if (button6.checked){
+//     //need to return the current players token?
+//   } if (button7.checked){
+//     //need to return the current players token?
+//   }if (button8.checked){
+//     //need to return the current players token?
+//   }
+//   // addPlayerToken()
+// }
 
 
-
+//conditionals for a function to determine if that particular block / button has been theClickedBlock
+//how to check if the button has been clicked?
+//once clicked, placing token (see game)
 //
+
+
+function playTokenOnBlock() {
+  if (event.target.classList.contains("button")) {
+    buffaloToken.classList.add("hidden");
+    mountainToken.classList.hide("hidden");
+    button0.innerHTML = `
+    <button class="button0 block" id="zero"> <img class="buffalo-token" alt="buffalo-cartoon">🦬</button>
+    `
+  }
+};
+    //
+    // determine which block is clicked
+    // adding or hiding classes
+    // if player 1 is true, play this token, else refuse to let other token play
+    //
+    //

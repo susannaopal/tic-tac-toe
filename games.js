@@ -46,7 +46,7 @@
 //changeTurn notes:
 //function for change turns (functionality main file?)
 //how to changeTurns
-//need to check if someone has played a token on a theClickedSquare
+//need to check if someone has played a token on a theClickedBlock
 //need to check if either player has clicked a button and if so, then it goes to the other player
 
 
@@ -70,6 +70,7 @@
 
 class Game {
   constructor (player1, player2) {
+    // console.log("i am clicking here")
     this.player1 = new Player ('player1', '🦬');
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = [0,1,2,3,4,5,6,7,8];
@@ -78,18 +79,21 @@ class Game {
   //below reset the board with below
     this.clicks = 0;
   }
-
-  startAGame(theClickedSquare){
-    if (this.player1.token !== this.gameboard[theClickedSquare]){
-      this.addPlayerToken(theClickedSquare, changeTurn);
-    } else if (this.player2.token !== this.gameboard[theClickedSquare]){
-      this.addPlayerToken(theClickedSquare, changeTurn);
+//currently throwing an error to try and test it:
+// "VM6596:1 Uncaught ReferenceError: startAGame is not defined
+//     at <anonymous>:1:1"
+  startAGame(theClickedBlock){
+    // console.log("1111i am clicking here1")
+    if (this.player1.token !== this.gameboard[theClickedBlock]){
+      this.addPlayerToken(theClickedBlock, changeTurn);
+    } else if (this.player2.token !== this.gameboard[theClickedBlock]){
+      this.addPlayerToken(theClickedBlock, changeTurn);
     }
   }
 
-  addPlayerToken(theClickedSquare, whoeverIsPlaying){
-    this.gameBoard.splice(theClickedSquare, 1, whoeverIsPlaying.token)
-    whoeverIsPlaying.numberOfWins.push(parseInt(theClickedSquare))
+  addPlayerToken(theClickedBlock, whoeverIsPlaying){
+    this.gameBoard.splice(theClickedBlock, 1, whoeverIsPlaying.token)
+    whoeverIsPlaying.numberOfWins.push(parseInt(theClickedBlock))
     this.trackGameboardData()
   }
 
@@ -111,6 +115,7 @@ class Game {
     this.changeTurn()
   }
 }
+
   checkForDraw() {
     if (this.clicks === 9) {
       this.clicks = 0;
@@ -122,6 +127,9 @@ class Game {
     this.currentPlayer.draw = true;
   }
 
+
+//does the timeout functionality need to come here or in main?
+//and this would be called there?
   resetGame(){
     this.currentPlayer.numberOfWins = [];
     this.currentPlayer.winner = false;
