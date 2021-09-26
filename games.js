@@ -75,7 +75,7 @@ class Game {
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
 //change these to string arrays  for all of them
-    this.winTracker = [["button0", "button1","button2"], [0,4,8], [6,4,2], [1,4,7], [3,4,5], [6,7,8],[0,3,6], [2,5,8]];
+    this.winTracker = [["button0", "button1", "button2"], ["button0", "button4", "button8"], ["button6", "button4", "button2"], ["button1", "button4", "button7"], ["button3", "button4", "button5"], ["button6", "button7", "button8"],["button0", "button3", "button6"], ["button2", "button5", "button8"]];
     this.currentPlayer = this.player1
   //below reset the board with below
     this.clicks = 0;
