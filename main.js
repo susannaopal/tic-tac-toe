@@ -2,7 +2,7 @@
 
 //may need to connect the game and player class files here
 //instiatiate the classes here
-//review ROMCOM < instite the new book
+//review paired < instite the new poster
 
 //everything needs to go in here
 
@@ -20,3 +20,63 @@
 //eventlisterers and queries here to see what needs to be selected and when
 //functionality will come from here
 //WRITE LITTLE LITTLE CHUNKS
+
+//when a box is selected then it will need to be disabled -- how to do? review button disabling!
+
+//anything we are manipulating goes in here but the classes are the data model (array in player class)
+
+
+// A TIMEOUT is used after a completed game to reset the board:
+
+
+//Global Variables 👇
+// var game = new Game();
+
+
+//QUERY SELECTORS 👇
+var boxA1 = document.querySelector("#aOne");
+var boxA2 = document.querySelector("#aTwo");
+var boxA3 = document.querySelector("#aThree");
+var boxB1 = document.querySelector("#bOne");
+var boxB2 = document.querySelector("#bTwo");
+var boxB3 = document.querySelector("#bThree");
+var boxC1 = document.querySelector("#cOne");
+var boxC2 = document.querySelector("#cTwo");
+var boxC3 = document.querySelector("#cThree");
+var gameboardGrid = document.querySelector("#gameboardGrid");
+var buffaloToken = document.querySelector("#buffaloToken");
+var mountainToken = document.querySelector("#mountainToken");
+
+//EVENT LISTENERS👇
+
+// gameboardGrid.addEventListener('click', selectGridBlock);
+
+
+//FUNCTIONS & EVENT HANDLERS👇
+
+// function selectGridBlock() {
+//   if (event.target.classList.contains("block")) {
+//     buffaloToken.classList.toggle("hidden");
+//     mountainToken.classList.toggle("hidden");
+//     boxA1.innerHTML = `
+//     <div class="a1 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
+//     `
+    // boxA2.innerHTML = `
+
+    // <div class="a2 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
+    // `
+    // boxA3.innerHTML = `
+    // <div class="a3 block" id="aOne"> <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"></div>
+    // `
+//     //determine which block is clicked
+//     //adding or hiding classes
+//     //if player 1 is true, play this token, else refuse to let other token play
+//
+//  }
+// };
+
+
+
+//
+// EVENTUALLY NEED THIS FUNCTIONALITY: DOM Manipulator to replace the empty square with the token when it is clicked and if it is empty
+//if it is the square that has been clicked and doesn't have a token, then change the innerTEXT to whoever's turn it is token

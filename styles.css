@@ -3,7 +3,6 @@ font-family: 'Cookie', cursive;
 }
 
 body {
-/* Need to change background color but keep the blue! */
     background: linear-gradient(#c7e5d2, #134d71);
     background-attachment: fixed;
     margin: 0;
@@ -24,7 +23,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   color: #ffffff;
-  font-size: 225%;
+  font-size: 2em;
   /* border: 2px solid white; */
   width: 40%;
   text-decoration: underline;
@@ -124,7 +123,7 @@ main {
   border-bottom: none; */
 /* } */
 
-
+/* //below is now the buttons stufff */
 div {
   border: 6px solid white;
   border-image: linear-gradient(45deg, #c7e5d2, #134d71) 1;
@@ -133,19 +132,26 @@ div {
 
 }
 
-.buffalo-token,
+
+/* .buffalo-token,
 .mountain-token{
   border-radius: 10px;
-  width: 100px;
-  height: 100px;
+  font-size: 50px;
   /* border: solid orange; */
   margin: 50px;
+} */
+
+.buffalo-turn,
+.mountain-turn{
+  margin-bottom: 0;
+  font-size: 3em;
 }
 
 h1 {
   /* margin: 10px; */
   /* margin-bottom: 40px; */
   /* padding: 15px; */
+  /* border: 2px solid pink; */
 }
 
 h2{
@@ -154,8 +160,8 @@ h2{
 
 /* h3{
   /* border: 5px solid blue; */
-  margin: 10px;
-} */
+  /* margin: 10px; */
+/* } */ */
 
 p {
   font-size: 50px;

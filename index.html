@@ -9,32 +9,39 @@
   <body>
     <main>
       <section class= "player-one" id ="playerOne">
-        <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon">
+        <!-- <img class="buffalo-token" src="assets/buffalo.svg" alt="buffalo-cartoon"> -->
+        <div class="buffalo-token" alt="buffalo-cartoon">🦬</div>
         <h2>player one wins</h2>
-        <p id="playerOneWins">#</p>
+        <h3 id="playerOneWins">#</h3>
         <!-- <h3>insert wins #</h3> -->
       </section>
       <section class= "game-board" id ="gameBoard">
         <h1>tic-tac-toe</h1>
-        <p>it's so and so's turn</p>
+        <h1 class="which-player-turn-buffalo" id="buffaloToken">It's<span><div class="buffalo-turn" alt="buffalo-cartoon">🦬</div></span>turn!</h1>
+        <h1 class="which-player-turn-mountain hidden" id="mountainToken">It's <span><div class="mountain-turn" alt="mountain-cartoon">🏔</div></span>turn!</h1>
         <!-- <section class="center-panel"> -->
-          <article class="article-gameboard-grid">
-                <div class="a1" id="aOne"></div>
-                <div class="a2" id="aTwo"></div>
-                <div class="a3" id="aThree"></div>
-                <div class="b1" id="bOne"></div>
-                <div class="b2" id="bTwo"></div>
-                <div class="b3" id="bThree"></div>
-                <div class="c1" id="cOne"></div>
-                <div class="c2" id="cTwo"></div>
-                <div class="c3" id="cThree"></div>
+<!-- //if this was a section then the divs could be inputs or buttons or articles instead -->
+<!-- //if a button instead of a div then once clicked it could be disabled and the token there
+//fix in CSS after, the button styling w/h/center where the grid used to be to fix with borders where it was a div before -->
+<!-- //can a button have a border like with a div? -->
+          <article class="article-gameboard-grid" id="gameboardGrid">
+                <button class="0 block" id="zero"></button>
+                <button class="1 block" id="one"></button>
+                <button class="2 block" id="two"></button>
+                <button class="3 block" id="three"></button>
+                <button class="4 block" id="four"></button>
+                <button class="5 block" id="five"></button>
+                <button class="6 block" id="six"></button>
+                <button class="7 block" id="seven"></button>
+                <button class="8 block" id="eight"></button>
           </article>
        <!-- </section> -->
       </section>
       <section class= "player-two" id ="playerTwo">
-        <img class="mountain-token" src="assets/mountain.svg" alt="mountain-cartoon">
+        <div class="mountain-token" alt="mountain-cartoon">🏔</div>
+        <!-- <img class="mountain-token" src="assets/mountain.svg" alt="mountain-cartoon"> -->
         <h2>player two wins</h2>
-        <p id="playerTwoWins">#</p>
+        <h3 id="playerTwoWins">#</h3>
         <!-- <h3>insert wins #</h3> -->
       </section>
   </main>
