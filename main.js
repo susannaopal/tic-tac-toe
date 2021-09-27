@@ -60,7 +60,7 @@ var gameboardGrid = document.querySelector("#gameboardGrid");
 var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
 var turnToken = document.querySelector("#turnToken");
-var testDiv = document.querySelector("#testDiv");
+var resultsDiv = document.querySelector("#resultsDiv");
 
 
 //EVENT LISTENERS👇
