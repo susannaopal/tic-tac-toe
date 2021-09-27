@@ -66,6 +66,17 @@
 //don't mix up the actual #s with the indexes of the mini arrays
 
 
+// checkforwins:
+//still NEED to figure out how to update the innerHTML on the DOM to showcase a win but currently the win isn't working (need it to push for local storage)
+
+
+//original piece of function (to delete)
+  // this.currentPlayer.counterOfWins ++
+  // this.clicks = 0
+
+// if (this.currentPlayer.numberOfWins.includes(this.winConditions[i][0]) && this.currentPlayer.numberOfWins.includes(this.winConditions[i][1]) && this.currentPlayer.numberOfWins.includes(this.winConditions[i][2])) {
+  // console.log("this still working?")
+
 
 // each player would have their own array and loop through the possible win conditions and see if that includes
 
@@ -81,6 +92,7 @@ class Game {
     this.currentPlayer = this.player1
   //below reset the board with below
     this.clicks = 0;
+    this.draw = false;
   }
 
   clickBlock(theClickedBlock){
@@ -91,8 +103,12 @@ class Game {
 
   addPlayerToken(theClickedBlock){
     this.gameboard[theClickedBlock] = this.currentPlayer
+    this.clicks++
+
     // this.changeTurn()
     this.getPlayerChoices()
+    this.changeTurn()
+
     // console.log("this.gameboard", this.gameboard)
   }
 
@@ -103,7 +119,9 @@ class Game {
       this.currentPlayer = this.player1
     }
 }
-//re-revjew object values
+
+
+//re-revjew object values // add to notes
   getPlayerChoices() {
     var gameboardValues = Object.values(this.gameboard)
     console.log(gameboardValues)
@@ -122,10 +140,16 @@ class Game {
     // checkForWin(player2Choices)
   }
 
-
+//original conditional that failed so we tried the every method and ended up with a nested forloop
   // currentPlayerChoices.includes(this.winConditions[i])
   // below worked but cannot use:
   // this.winConditions[i].every(num => currentPlayerChoices.includes(num)
+
+
+// sunday night notes:
+  //get getPlayerChoices needs to still update the array for the player class because it isn't pushing into this.numberofwins because it isn't being asked to
+  //still need to figure out how to push this wins into the array this.numberOfWins?
+  //And figure out how to update the DOM so that the number of wins can be replaced by innerHTML
 
   checkForWin(currentPlayerChoices){
     // console.log("this working?")
@@ -134,8 +158,8 @@ class Game {
     for (var i = 0; i < this.winConditions.length; i++){
       var winConditionCounter = 0;
       for (var j = 0; j < this.winConditions[i].length; j++) {
-        console.log("winning counter", winConditionCounter)
-      console.log(currentPlayerChoices.includes(this.winConditions[i][j]))
+      //   console.log("winning counter", winConditionCounter)
+      // console.log(currentPlayerChoices.includes(this.winConditions[i][j]))
         if (currentPlayerChoices.includes(this.winConditions[i][j])) {
           winConditionCounter++
         }
@@ -145,33 +169,37 @@ class Game {
         }
       }
 
-        // this.currentPlayer.counterOfWins ++
-        // this.clicks = 0
 
-      // if (this.currentPlayer.numberOfWins.includes(this.winConditions[i][0]) && this.currentPlayer.numberOfWins.includes(this.winConditions[i][1]) && this.currentPlayer.numberOfWins.includes(this.winConditions[i][2])) {
-        console.log("this still working?")
 
     }
-    this.changeTurn()
+    this.checkForDraw()
+    // this.changeTurn()
+
   }
 
+//still need to write a function to check for the checkForDraw
+//once that happens then if there is a win OR a checkForDraw
+//then need to reset the game
 
+//would update this in the dom
   checkForDraw() {
-    if (this.clicks === 9) {
-      this.clicks = 0;
+    if (!this.win && this.clicks === 9) {
+      console.log("this.clicks", this.clicks)
+      this.draw = true;
     }
+
     //check if the click count is === 9 (# of squares)
     //reset it to the beginning  || reassign it to 0
     // say that the current player is at a draw
-
-    this.currentPlayer.draw = true;
   }
 
 
 //does the timeout functionality need to come here or in main?
 //and this would be called there?
   resetGame(){
+    //this needs to update or reset for the next games//how?
     this.currentPlayer.numberOfWins = [];
+    this.clicks = 0;
     this.currentPlayer.winner = false;
     this.currentPlayer.draw = false;
   }
