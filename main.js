@@ -54,9 +54,13 @@ var game = new Game()
 // var button6 = document.querySelector("#six");
 // var button7 = document.querySelector("#seven");
 // var button8 = document.querySelector("#eight");
+
+//these should all be IDS when refactoring
 var gameboardGrid = document.querySelector("#gameboardGrid");
-var buffaloToken = document.querySelector("#buffaloToken");
+var buffaloToken = document.querySelector(".buffalo-token");
 var mountainToken = document.querySelector("#mountainToken");
+var turnToken = document.querySelector('.turn-token');
+
 
 //EVENT LISTENERS👇
 
@@ -74,8 +78,19 @@ function playTokenOnBlock(event){
 }
   game.clickBlock(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
+  updateEmojiTurn()
 }
 
+function updateEmojiTurn(){
+  //update this property by hiding the other
+  // buffaloToken.classList.add("hidden");
+  // mountainToken.classList.hide("hidden")
+  if (game.currentPlayer === game.player1) {
+    turnToken.innerHTML = `${game.player1.token} it's your turn now`
+  } else if (game.currentPlayer === game.player2){
+    turnToken.innerHTML = `${game.player2.token} it's your turn now`
+  }
+}
 
 
 //one want to start a new game if someone wins or a draw
