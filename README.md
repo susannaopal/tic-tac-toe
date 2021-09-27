@@ -42,7 +42,7 @@ Use [https://gifcap.dev/](https://gifcap.dev/) to make GIFs
   - [Susanna Carey](https://github.com/susannaopal)
 
 ## Project Manager
-    - Heather Faerber: [Turing School of Software and Design](https://turing.edu/)
+ - Heather Faerber: [Turing School of Software and Design](https://turing.edu/)
 
 ## Wins // NEED TO ADD!
 	- What went well!
