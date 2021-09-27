@@ -115,12 +115,13 @@ class Game {
     this.currentPlayer = this.player1;
     this.clicks = 0;
     this.draw = false;
-    this.win = true
+    this.win = true;
   }
 
   clickBlock(theClickedBlock){
     if (!this.gameboard[theClickedBlock]){
       this.addPlayerToken(theClickedBlock);
+      // console.log("anything here")
     }
   }
 
@@ -128,10 +129,12 @@ class Game {
     this.gameboard[theClickedBlock] = this.currentPlayer
     this.clicks++
     this.getPlayerChoices()
+    // console.log("try it")
     this.changeTurn()
   }
 
   changeTurn(){
+    // console.log(this.currentPlayer)
     if (this.currentPlayer === this.player1){
       this.currentPlayer = this.player2
     } else if (this.currentPlayer === this.player2){
@@ -148,9 +151,11 @@ class Game {
       }
     }
     this.checkForWin(currentPlayerChoices)
+    console.log("this is a test")
   }
 
   checkForWin(currentPlayerChoices){
+console.log(currentPlayerChoices, "what are you?")
     // var currentPlayerChoices = [];
     for (var i = 0; i < this.winConditions.length; i++){
       var winConditionCounter = 0;
@@ -161,9 +166,13 @@ class Game {
         if (winConditionCounter === 3) {
           this.currentPlayer.counterOfWins ++
           this.currentPlayer.winner = true
+          console.log("you are a winner")
+          hideText()
+          testDiv.innerHTML = `You are a winner!`
         }
       }
     }
+    console.log("heeeeeeeey checkfor this check for win")
     this.checkForDraw()
   }
 
