@@ -82,9 +82,6 @@ function playTokenOnBlock(event){
 }
 
 function updateEmojiTurn(){
-  //update this property by hiding the other
-  // buffaloToken.classList.add("hidden");
-  // mountainToken.classList.hide("hidden")
   if (game.currentPlayer === game.player1) {
     turnToken.innerHTML = `${game.player1.token} it's your turn`
   } else if (game.currentPlayer === game.player2){
@@ -92,7 +89,22 @@ function updateEmojiTurn(){
   }
 }
 
+//function to tell when a player has won OR if it has ended in a draw
+//function will also need to update the innerHTML of the game player token phrase
+//something like if a player has won (using check for a win); then the game ends
+// or if clicks get to 9 then the game ends there and a return of a draw
+//likely two different functions to keep simple and to the point
 
+
+
+
+
+
+
+
+//update this property by hiding the other
+// buffaloToken.classList.add("hidden");
+// mountainToken.classList.hide("hidden")
 //one want to start a new game if someone wins or a draw
 
 
