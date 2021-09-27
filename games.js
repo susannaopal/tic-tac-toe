@@ -80,17 +80,39 @@
 
 // each player would have their own array and loop through the possible win conditions and see if that includes
 
+//ex: var namePlayer = class Player ({id: id, token: token, wins: [#]})
+
+//1 new instance of the game is 2 new instances of the player
+
+
+//original conditional that failed so we tried the every method and ended up with a nested forloop
+  // currentPlayerChoices.includes(this.winConditions[i])
+  // below worked but cannot use:
+  // this.winConditions[i].every(num => currentPlayerChoices.includes(num)
+
+//timeout eventually notes"
+//does the timeout functionality need to come here or in main?
+//and this would be called there?
+    //this needs to update or reset for the next games//how?
+
+
+// sunday night notes:
+  //get getPlayerChoices needs to still update the array for the player class because it isn't pushing into this.numberofwins because it isn't being asked to
+  //still need to figure out how to push this wins into the array this.numberOfWins?
+  //And figure out how to update the DOM so that the number of wins can be replaced by innerHTML
+
+
+
+//should conditionals be in here?
+// What are said conditionals?
 
 class Game {
   constructor () {
-    // console.log("i am clicking here")
     this.player1 = new Player ('player1', '🦬');
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
-//change these to string arrays  for all of them
     this.winConditions = [[0, 1, 2], [0, 4, 8], [6, 4, 2], [1, 4, 7], [3, 4, 5], [6, 7, 8],[0, 3, 6], [2, 5, 8]];
     this.currentPlayer = this.player1
-  //below reset the board with below
     this.clicks = 0;
     this.draw = false;
   }
@@ -104,12 +126,8 @@ class Game {
   addPlayerToken(theClickedBlock){
     this.gameboard[theClickedBlock] = this.currentPlayer
     this.clicks++
-
-    // this.changeTurn()
     this.getPlayerChoices()
     this.changeTurn()
-
-    // console.log("this.gameboard", this.gameboard)
   }
 
   changeTurn(){
@@ -120,46 +138,23 @@ class Game {
     }
 }
 
-
-//re-revjew object values // add to notes
   getPlayerChoices() {
     var gameboardValues = Object.values(this.gameboard)
     console.log(gameboardValues)
     var currentPlayerChoices = [];
-    // var player2Choices = [];
     for (var i= 0; i < gameboardValues.length; i++){
       if(gameboardValues[i] && gameboardValues[i].id === this.currentPlayer.id) {
         console.log(i)
       currentPlayerChoices.push(i)
-      // } else {
-      //   player2Choices.push(i)
       }
     }
-    console.log("did you work", currentPlayerChoices)
     this.checkForWin(currentPlayerChoices)
-    // checkForWin(player2Choices)
   }
 
-//original conditional that failed so we tried the every method and ended up with a nested forloop
-  // currentPlayerChoices.includes(this.winConditions[i])
-  // below worked but cannot use:
-  // this.winConditions[i].every(num => currentPlayerChoices.includes(num)
-
-
-// sunday night notes:
-  //get getPlayerChoices needs to still update the array for the player class because it isn't pushing into this.numberofwins because it isn't being asked to
-  //still need to figure out how to push this wins into the array this.numberOfWins?
-  //And figure out how to update the DOM so that the number of wins can be replaced by innerHTML
-
   checkForWin(currentPlayerChoices){
-    // console.log("this working?")
-
-    // console.logs in here to determine if working or not
     for (var i = 0; i < this.winConditions.length; i++){
       var winConditionCounter = 0;
       for (var j = 0; j < this.winConditions[i].length; j++) {
-      //   console.log("winning counter", winConditionCounter)
-      // console.log(currentPlayerChoices.includes(this.winConditions[i][j]))
         if (currentPlayerChoices.includes(this.winConditions[i][j])) {
           winConditionCounter++
         }
@@ -168,51 +163,20 @@ class Game {
           this.currentPlayer.winner = true
         }
       }
-
-
-
     }
     this.checkForDraw()
-    // this.changeTurn()
-
   }
 
-//still need to write a function to check for the checkForDraw
-//once that happens then if there is a win OR a checkForDraw
-//then need to reset the game
-
-//would update this in the dom
   checkForDraw() {
     if (!this.win && this.clicks === 9) {
-      console.log("this.clicks", this.clicks)
       this.draw = true;
     }
-
-    //check if the click count is === 9 (# of squares)
-    //reset it to the beginning  || reassign it to 0
-    // say that the current player is at a draw
   }
 
-
-//does the timeout functionality need to come here or in main?
-//and this would be called there?
   resetGame(){
-    //this needs to update or reset for the next games//how?
     this.currentPlayer.numberOfWins = [];
     this.clicks = 0;
     this.currentPlayer.winner = false;
     this.currentPlayer.draw = false;
   }
 };
-
-
-//ex: var namePlayer = class Player ({id: id, token: token, wins: [#]})
-
-//1 new instance of the game is 2 new instances of the player
-
-
-
-
-
-//should conditionals be in here?
-// What are said conditionals?
