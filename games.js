@@ -112,9 +112,10 @@ class Game {
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
     this.winConditions = [[0, 1, 2], [0, 4, 8], [6, 4, 2], [1, 4, 7], [3, 4, 5], [6, 7, 8],[0, 3, 6], [2, 5, 8]];
-    this.currentPlayer = this.player1
+    this.currentPlayer = this.player1;
     this.clicks = 0;
     this.draw = false;
+    this.win = true
   }
 
   clickBlock(theClickedBlock){
@@ -150,6 +151,7 @@ class Game {
   }
 
   checkForWin(currentPlayerChoices){
+    var currentPlayerChoices = [];
     for (var i = 0; i < this.winConditions.length; i++){
       var winConditionCounter = 0;
       for (var j = 0; j < this.winConditions[i].length; j++) {
@@ -173,7 +175,6 @@ class Game {
   }
 //function isn't currently working
 //need to be able to reset the gameboard after getting the DOM to display player win or a draw!
-
   resetGame(){
     this.currentPlayer.numberOfWins = [];
     this.clicks = 0;
