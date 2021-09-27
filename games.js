@@ -168,13 +168,17 @@ class Game {
   checkForDraw() {
     if (!this.win && this.clicks === 9) {
       this.draw = true;
+      //this.resetGame()
     }
   }
+//function isn't currently working
+//need to be able to reset the gameboard after getting the DOM to display player win or a draw!
 
   resetGame(){
     this.currentPlayer.numberOfWins = [];
     this.clicks = 0;
     this.currentPlayer.winner = false;
     this.currentPlayer.draw = false;
+    timeOut(playNewGame, 3000);
   }
 }
