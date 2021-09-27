@@ -115,7 +115,6 @@ class Game {
     this.currentPlayer = this.player1;
     this.clicks = 0;
     this.draw = false;
-    this.win = true;
   }
 
   clickBlock(theClickedBlock){
@@ -168,17 +167,20 @@ console.log(currentPlayerChoices, "what are you?")
           this.currentPlayer.winner = true
           console.log("you are a winner")
           hideText()
-          testDiv.innerHTML = `You are a winner!`
+          resultsDiv.innerHTML = `You are a winner!`
         }
       }
     }
     console.log("heeeeeeeey checkfor this check for win")
     this.checkForDraw()
+    console.log("this is draw", this.checkForDraw())
   }
 
   checkForDraw() {
-    if (!this.win && this.clicks === 9) {
+    if (!this.currentPlayer.winner && this.clicks === 9) {
       this.draw = true;
+      hideText()
+      resultsDiv.innerHTML = `This is a draw!`
       //this.resetGame()
     }
   }
