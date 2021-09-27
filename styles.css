@@ -3,9 +3,9 @@ font-family: 'Cookie', cursive;
 }
 
 body {
-    background: linear-gradient(#c7e5d2, #134d71);
-    background-attachment: fixed;
-    margin: 0;
+  background: linear-gradient(#c7e5d2, #134d71);
+  background-attachment: fixed;
+  margin: 0;
 }
 
 main {
@@ -182,7 +182,8 @@ button {
   font-size: 1em;
 }
 
-.turn-token{
+.turn-token,
+.token-chooser{
   text-decoration: underline;
 }
 
