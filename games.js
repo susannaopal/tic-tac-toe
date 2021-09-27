@@ -140,11 +140,9 @@ class Game {
 
   getPlayerChoices() {
     var gameboardValues = Object.values(this.gameboard)
-    console.log(gameboardValues)
     var currentPlayerChoices = [];
     for (var i= 0; i < gameboardValues.length; i++){
       if(gameboardValues[i] && gameboardValues[i].id === this.currentPlayer.id) {
-        console.log(i)
       currentPlayerChoices.push(i)
       }
     }
@@ -179,4 +177,4 @@ class Game {
     this.currentPlayer.winner = false;
     this.currentPlayer.draw = false;
   }
-};
+}
