@@ -151,7 +151,7 @@ class Game {
   }
 
   checkForWin(currentPlayerChoices){
-    var currentPlayerChoices = [];
+    // var currentPlayerChoices = [];
     for (var i = 0; i < this.winConditions.length; i++){
       var winConditionCounter = 0;
       for (var j = 0; j < this.winConditions[i].length; j++) {
