@@ -57,9 +57,9 @@ var game = new Game()
 
 //these should all be IDS when refactoring
 var gameboardGrid = document.querySelector("#gameboardGrid");
-var buffaloToken = document.querySelector(".buffalo-token");
+var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
-var turnToken = document.querySelector('.turn-token');
+var turnToken = document.querySelector("#turnToken");
 
 
 //EVENT LISTENERS👇
