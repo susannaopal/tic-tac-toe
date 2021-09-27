@@ -86,7 +86,7 @@ function updateEmojiTurn(){
   // buffaloToken.classList.add("hidden");
   // mountainToken.classList.hide("hidden")
   if (game.currentPlayer === game.player1) {
-    turnToken.innerHTML = `${game.player1.token} it's your turn now`
+    turnToken.innerHTML = `${game.player1.token} it's your turn`
   } else if (game.currentPlayer === game.player2){
     turnToken.innerHTML = `${game.player2.token} it's your turn now`
   }
