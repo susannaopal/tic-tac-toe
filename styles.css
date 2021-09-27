@@ -157,6 +157,7 @@ button {
   border-image: linear-gradient(45deg, #c7e5d2, #134d71) 1;
   height:140px;
   width: 160px;
+  font-size: 2em;
   /* border: none; */
 }
 
