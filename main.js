@@ -79,13 +79,14 @@ function playTokenOnBlock(event){
   game.clickBlock(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
   updateEmojiTurn()
+  // game.checkForWin()
 }
 
 function updateEmojiTurn(){
   if (game.currentPlayer === game.player1) {
-    turnToken.innerHTML = `${game.player1.token} it's your turn`
+    turnToken.innerHTML = `it's ${game.player1.token} turn`
   } else if (game.currentPlayer === game.player2){
-    turnToken.innerHTML = `${game.player2.token} it's your turn now`
+    turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
 }
 
@@ -94,8 +95,26 @@ function updateEmojiTurn(){
 //something like if a player has won (using check for a win); then the game ends
 // or if clicks get to 9 then the game ends there and a return of a draw
 //likely two different functions to keep simple and to the point
+//or would this be all in one function?
 
+function updateWhoWon(){
+  if (game.currentPlayer === game.player1.winner) {
+    turnToken.innerHTML = `${game.player1.token} won!`
+  } else if (game.currentPlayer === game.player2.winner){
+    turnToken.innerHTML = `${game.player2.token} won!`
+  }
+}
+//if checkforawin has run and then someone has won, need to END the game
+//return string that updates the innerHTML
+//game needs to start over automatically after someone wins (but this is timeout functionality related to localStorage)
+// checkForWin(currentPlayerChoices)
 
+// function updateWithDraw(){
+// //if checkforadraw is true after running check for a win and there isn't a win because 9 clicks have happened, the innerHTML needs to update its property to a draw for the turnToken
+// if (this.draw === true){
+//   return turnToken.innerHTML = `🦬 Tt's a draw! 🏔`
+//   }
+// }
 
 
 
