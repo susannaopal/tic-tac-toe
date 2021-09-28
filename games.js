@@ -164,9 +164,13 @@ console.log(currentPlayerChoices, "what are you?")
           winConditionCounter++
         }
         if (winConditionCounter === 3) {
+          // console.log("1", this.gameOver, this.currentPlayer.winner)
           this.currentPlayer.counterOfWins ++
+
           this.gameOver = true;
           this.currentPlayer.winner = true
+          // console.log("2", this.gameOver, this.currentPlayer.winner)
+
           //need game to end
 
           // console.log("you are a winner")
@@ -186,13 +190,13 @@ console.log(currentPlayerChoices, "what are you?")
       this.draw = true;
       hideText()
       resultsDiv.innerHTML = `This is a draw!`
-        this.gameOver = true;
+      this.gameOver = true;
       //this.resetGame()
     }
   }
 
    resetGame(){
-
+    this.gameOver = false;
     this.clicks = 0
     this.player1.winner = false
     this.player2.winner = false
