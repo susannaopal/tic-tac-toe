@@ -68,9 +68,16 @@ var teamBuffaloWins = document.querySelector("#playerOneWins");
 var teamMountainWins = document.querySelector("#playerTwoWins");
 var blocks = document.querySelectorAll(".block");
 
+function showWinsFromStorage(){
+  game.player1.retrieveWinsFromStorage()
+  game.player2.retrieveWinsFromStorage()
+  teamBuffaloWins.innerHTML =  `${game.player1.counterOfWins}`
+  teamMountainWins.innerHTML =  `${game.player2.counterOfWins}`
+}
+
 //EVENT LISTENERS👇
 //need to build out below for localStorage once implemented
-// window.addEventListener('load', showWinsFromStorage)
+window.addEventListener('load', showWinsFromStorage);
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
