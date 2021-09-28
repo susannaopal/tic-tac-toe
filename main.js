@@ -78,7 +78,6 @@ function showWinsFromStorage(){
 //EVENT LISTENERS👇
 //need to build out below for localStorage once implemented
 window.addEventListener('load', showWinsFromStorage);
-
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
