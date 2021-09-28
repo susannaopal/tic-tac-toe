@@ -57,9 +57,10 @@ var game = new Game()
 
 //these should all be IDS when refactoring
 var gameboardGrid = document.querySelector("#gameboardGrid");
-var buffaloToken = document.querySelector(".buffalo-token");
+var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
-var turnToken = document.querySelector('.turn-token');
+var turnToken = document.querySelector("#turnToken");
+var resultsDiv = document.querySelector("#resultsDiv");
 
 
 //EVENT LISTENERS👇
@@ -70,29 +71,70 @@ gameboardGrid.addEventListener('click', playTokenOnBlock);
 //FUNCTIONS & EVENT HANDLERS👇
 
 function playTokenOnBlock(event){
+  // alert("hellllo")
   var theClickedBlock = event.target.classList[0]
   if (game.player1 === game.currentPlayer) {
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🦬`
 } else {
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
+// console.log("is this here")
   game.clickBlock(theClickedBlock)
+  // console.log(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
   updateEmojiTurn()
+  // game.checkForWin()
 }
 
 function updateEmojiTurn(){
-  //update this property by hiding the other
-  // buffaloToken.classList.add("hidden");
-  // mountainToken.classList.hide("hidden")
   if (game.currentPlayer === game.player1) {
-    turnToken.innerHTML = `${game.player1.token} it's your turn now`
+    turnToken.innerHTML = `it's ${game.player1.token} turn`
   } else if (game.currentPlayer === game.player2){
-    turnToken.innerHTML = `${game.player2.token} it's your turn now`
+    turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
 }
 
+//function to tell when a player has won OR if it has ended in a draw
+//function will also need to update the innerHTML of the game player token phrase
+//something like if a player has won (using check for a win); then the game ends
+// or if clicks get to 9 then the game ends there and a return of a draw
+//likely two different functions to keep simple and to the point
+//or would this be all in one function?
 
+// function updateWhoWon(){
+//   if (game.currentPlayer === game.player1.winner) {
+//     turnToken.innerHTML = `${game.player1.token} won!`
+//   } else if (game.currentPlayer === game.player2.winner){
+//     turnToken.innerHTML = `${game.player2.token} won!`
+//   }
+//   //else if a DRAW (conditions? and innerHTML needs to be updated)
+// }
+
+function hideText(){
+  turnToken.classList.add('hidden');
+}
+
+
+//if checkforawin has run and then someone has won, need to END the game
+//return string that updates the innerHTML
+//game needs to start over automatically after someone wins (but this is timeout functionality related to localStorage)
+// checkForWin(currentPlayerChoices)
+
+// function updateWithDraw(){
+// //if checkforadraw is true after running check for a win and there isn't a win because 9 clicks have happened, the innerHTML needs to update its property to a draw for the turnToken
+// if (this.draw === true){
+//   return turnToken.innerHTML = `🦬 Tt's a draw! 🏔`
+//   }
+// }
+
+
+
+
+
+
+//update this property by hiding the other
+// buffaloToken.classList.add("hidden");
+// mountainToken.classList.hide("hidden")
 //one want to start a new game if someone wins or a draw
 
 

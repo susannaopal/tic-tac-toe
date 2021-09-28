@@ -3,9 +3,9 @@ font-family: 'Cookie', cursive;
 }
 
 body {
-    background: linear-gradient(#c7e5d2, #134d71);
-    background-attachment: fixed;
-    margin: 0;
+  background: linear-gradient(#c7e5d2, #134d71);
+  background-attachment: fixed;
+  margin: 0;
 }
 
 main {
@@ -26,7 +26,13 @@ main {
   font-size: 2em;
   /* border: 2px solid white; */
   width: 40%;
+  /* text-decoration: underline; */
+}
+
+.player-one,
+.player-two{
   text-decoration: underline;
+
 }
 
 .game-board {
@@ -43,11 +49,11 @@ main {
 
 .article-gameboard-grid {
   display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 250px;
-    margin-right: 234px;
-    margin-top: auto;
-    margin-bottom: 20px;
+  grid-template-columns: repeat(3, auto);
+  width: 250px;
+  margin-right: 234px;
+  margin-top: auto;
+  margin-bottom: 20px;
   /* border: 2px solid red; */
 }
 
@@ -151,13 +157,16 @@ main {
 /* } */
 
 /* //below is now the buttons stufff */
+
+
+
 button {
   border: 6px solid white;
   background-color: #e2fef4;
   border-image: linear-gradient(45deg, #c7e5d2, #134d71) 1;
   height:140px;
   width: 160px;
-  /* border: none; */
+  font-size: 2em;
 }
 
 
@@ -165,9 +174,6 @@ button {
 .mountain-token{
   border-radius: 10px;
   font-size: 3em;
-  /* font-size: 50px; */
-  /* border: solid orange; */
-  /* margin: 50px; */
 }
 
 .buffalo-turn,
@@ -176,13 +182,15 @@ button {
   font-size: 1em;
 }
 
-/* .which-player-turn-buffalo,
-.which-player-turn-mountain{
+.turn-token,
+.token-chooser{
+  text-decoration: underline;
+}
 
-} */
 
 h1 {
   margin: auto;
+  text-decoration: underline;
   /* margin-bottom: 40px; */
   /* padding: 15px; */
   /* border: 2px solid pink; */

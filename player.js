@@ -25,6 +25,8 @@ class Player {
     this.counterOfWins = 0;
     //^^ use this for localStorage
     //project spec shows an empty array??
+    // this.wins = 0;
+
     this.winner = false;
     // this.draw = false;
   }

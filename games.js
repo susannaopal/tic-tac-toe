@@ -112,7 +112,7 @@ class Game {
     this.player2 = new Player ('player2', '🏔');
     this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
     this.winConditions = [[0, 1, 2], [0, 4, 8], [6, 4, 2], [1, 4, 7], [3, 4, 5], [6, 7, 8],[0, 3, 6], [2, 5, 8]];
-    this.currentPlayer = this.player1
+    this.currentPlayer = this.player1;
     this.clicks = 0;
     this.draw = false;
   }
@@ -120,6 +120,7 @@ class Game {
   clickBlock(theClickedBlock){
     if (!this.gameboard[theClickedBlock]){
       this.addPlayerToken(theClickedBlock);
+      // console.log("anything here")
     }
   }
 
@@ -127,10 +128,12 @@ class Game {
     this.gameboard[theClickedBlock] = this.currentPlayer
     this.clicks++
     this.getPlayerChoices()
+    // console.log("try it")
     this.changeTurn()
   }
 
   changeTurn(){
+    // console.log(this.currentPlayer)
     if (this.currentPlayer === this.player1){
       this.currentPlayer = this.player2
     } else if (this.currentPlayer === this.player2){
@@ -140,18 +143,19 @@ class Game {
 
   getPlayerChoices() {
     var gameboardValues = Object.values(this.gameboard)
-    console.log(gameboardValues)
     var currentPlayerChoices = [];
     for (var i= 0; i < gameboardValues.length; i++){
       if(gameboardValues[i] && gameboardValues[i].id === this.currentPlayer.id) {
-        console.log(i)
       currentPlayerChoices.push(i)
       }
     }
     this.checkForWin(currentPlayerChoices)
+    console.log("this is a test")
   }
 
   checkForWin(currentPlayerChoices){
+console.log(currentPlayerChoices, "what are you?")
+    // var currentPlayerChoices = [];
     for (var i = 0; i < this.winConditions.length; i++){
       var winConditionCounter = 0;
       for (var j = 0; j < this.winConditions[i].length; j++) {
@@ -161,22 +165,32 @@ class Game {
         if (winConditionCounter === 3) {
           this.currentPlayer.counterOfWins ++
           this.currentPlayer.winner = true
+          console.log("you are a winner")
+          hideText()
+          resultsDiv.innerHTML = `You are a winner!`
         }
       }
     }
+    console.log("heeeeeeeey checkfor this check for win")
     this.checkForDraw()
+    console.log("this is draw", this.checkForDraw())
   }
 
   checkForDraw() {
-    if (!this.win && this.clicks === 9) {
+    if (!this.currentPlayer.winner && this.clicks === 9) {
       this.draw = true;
+      hideText()
+      resultsDiv.innerHTML = `This is a draw!`
+      //this.resetGame()
     }
   }
-
+//function isn't currently working
+//need to be able to reset the gameboard after getting the DOM to display player win or a draw!
   resetGame(){
     this.currentPlayer.numberOfWins = [];
     this.clicks = 0;
     this.currentPlayer.winner = false;
     this.currentPlayer.draw = false;
+    timeOut(playNewGame, 3000);
   }
-};
+}
