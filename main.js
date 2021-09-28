@@ -64,7 +64,8 @@ var resultsDiv = document.querySelector("#resultsDiv");
 
 
 //EVENT LISTENERS👇
-
+//need to build out below for localStorage once implemented
+// window.addEventListener('load', loadGamePage)
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
@@ -82,17 +83,20 @@ function playTokenOnBlock(event){
   game.clickBlock(theClickedBlock)
   // console.log(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
-  updateEmojiTurn()
+  UpdatePlayerTokenTurn()
   // game.checkForWin()
 }
 
-function updateEmojiTurn(){
+function UpdatePlayerTokenTurn(){
   if (game.currentPlayer === game.player1) {
     turnToken.innerHTML = `it's ${game.player1.token} turn`
   } else if (game.currentPlayer === game.player2){
     turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
 }
+
+
+
 
 //function to tell when a player has won OR if it has ended in a draw
 //function will also need to update the innerHTML of the game player token phrase
