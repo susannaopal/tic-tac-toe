@@ -70,7 +70,7 @@ var teamMountainWins = document.querySelector("#playerTwoWins");
 
 //EVENT LISTENERS👇
 //need to build out below for localStorage once implemented
-window.addEventListener('load', showWinsFromStorage)
+// window.addEventListener('load', showWinsFromStorage)
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
@@ -92,10 +92,17 @@ game.clickBlock(theClickedBlock)
   showTeamWins()
   // showWinsFromStorage()
 //need to create a GAMEOVER timeout FUNCTION (see game over property added in game class)
-  // if(game.gameOver === true){
-  //   game.resetGame()
+  if(game.gameOver === true){
+    game.resetGame()
+    gameboardGrid.innerHTML = ""
+    // theClickedBlock.innerHTML = ""
+    setTimeout(startAnotherGame, 2000)
   }
+}
 
+function startAnotherGame(){
+  resultsDiv.classList.add('hidden')
+}
 
 function updatePlayerTokenTurn(){
   if (game.currentPlayer === game.player1) {
@@ -106,7 +113,7 @@ function updatePlayerTokenTurn(){
 }
 
 function hideText(){
-  turnToken.classList.add('hidden');
+  turnToken.classList.remove('hidden');
 }
 
 
@@ -114,37 +121,25 @@ function hideText(){
 function showTeamWins(){
   var player1Wins = game.player1.counterOfWins
   var player2Wins = game.player2.counterOfWins
-  if(game.player1.counterOfWins === 1) {
-    teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
-
-  } else if(game.player2.counterOfWins === 1)
+  teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
   teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
 }
 
 
 
-function restartGame(){
-  if (game.player1.winner || game.player2.winner || game.clicks ===9 ) {
-    timeoutGame()
-  }
-}
 
-function timeoutGame(){
-  setTimeout(function(){
-    clearGame();
-    game = new Game ()
-    resultsDiv.innerHTML = ""
-    teamBuffaloWins.innerHTML = ""
-    teamMountainWins.innerhtml = ""
-    enableNewGame()
-  }, 2500)
-}
 
-function clearGame(){
-  this.gameboard.innerHTML =
-  `{"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined}`
+// function clearGame(){
+//   alert("is this working?")
+//
+// game.resetGame()
+// setTimeout(function(){}, 3000)
+// }
 
-}
+
+
+
+
 
 // function showWinsFromStorage(){
 //   // console.log("is this even working???")

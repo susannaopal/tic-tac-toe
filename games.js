@@ -165,18 +165,20 @@ console.log(currentPlayerChoices, "what are you?")
         }
         if (winConditionCounter === 3) {
           this.currentPlayer.counterOfWins ++
+          this.gameOver = true;
           this.currentPlayer.winner = true
-          console.log("you are a winner")
+          //need game to end
+
+          // console.log("you are a winner")
           hideText()
           resultsDiv.innerHTML = `You are a winner!`
-          this.gameOver = true;
         }
-    
+
       }
     }
-    console.log("heeeeeeeey checkfor this check for win")
+    // console.log("heeeeeeeey checkfor this check for win")
     this.checkForDraw()
-    console.log("this is draw", this.checkForDraw())
+    // console.log("this is draw", this.checkForDraw())
   }
 
   checkForDraw() {
@@ -187,6 +189,17 @@ console.log(currentPlayerChoices, "what are you?")
         this.gameOver = true;
       //this.resetGame()
     }
+  }
+
+   resetGame(){
+
+    this.clicks = 0
+    this.player1.winner = false
+    this.player2.winner = false
+    this.draw = false;
+    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined}
+  // console.log("this is the game", game)
+
   }
 }
 
