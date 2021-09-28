@@ -212,3 +212,8 @@ p {
 .hidden {
   display: none;
 }
+
+.buttons.disabled {
+  background-color: #e2fef4;
+  pointer-events = none;
+}

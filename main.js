@@ -44,7 +44,10 @@ var game = new Game()
 //is it distinguishing which button is clicked or is it listening just for a button?
 //what conditionals are needed for the button in order to play the token?
 //
-// var button = document.querySelectorAll(".button")
+// var buttons = document.querySelectorAll("button")
+
+
+
 // var button0 = document.querySelector("#zero");
 // var button1 = document.querySelector("#one");
 // var button2 = document.querySelector("#two");
@@ -63,11 +66,11 @@ var turnToken = document.querySelector("#turnToken");
 var resultsDiv = document.querySelector("#resultsDiv");
 var teamBuffaloWins = document.querySelector("#playerOneWins");
 var teamMountainWins = document.querySelector("#playerTwoWins");
-
+var blocks = document.querySelectorAll(".block");
 
 //EVENT LISTENERS👇
 //need to build out below for localStorage once implemented
-// window.addEventListener('load', loadGamePage)
+// window.addEventListener('load', showWinsFromStorage)
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
@@ -82,16 +85,29 @@ function playTokenOnBlock(event){
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
 // console.log("is this here")
+
 game.clickBlock(theClickedBlock)
   // console.log(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
   updatePlayerTokenTurn()
   showTeamWins()
-
+  // showWinsFromStorage()
 //need to create a GAMEOVER timeout FUNCTION (see game over property added in game class)
-  if(game.over){
-    game.resetGame
+  if(game.gameOver === true){
+    game.resetGame()
+    for (var i = 0; i < blocks.length; i++){
+      blocks[i].innerHTML = ""
+      blocks[i].disabled = false;
+    }
+    // gameboardGrid.innerHTML = ""
+    // theClickedBlock.innerHTML = ""
+    setTimeout(startAnotherGame, 2000)
   }
+  // console.log("3", game.gameOver)
+}
+
+function startAnotherGame(){
+  resultsDiv.classList.add('hidden')
 }
 
 function updatePlayerTokenTurn(){
@@ -100,6 +116,10 @@ function updatePlayerTokenTurn(){
   } else if (game.currentPlayer === game.player2){
     turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
+}
+
+function hideText(){
+  turnToken.classList.remove('hidden');
 }
 
 
@@ -112,10 +132,44 @@ function showTeamWins(){
 }
 
 
+
+
+
+// function clearGame(){
+//   alert("is this working?")
+//
+// game.resetGame()
+// setTimeout(function(){}, 3000)
+// }
+
+
+
+
+
+
+// function showWinsFromStorage(){
+//   // console.log("is this even working???")
+//   // alert("hellllo")
+//   game.player1.retrieveWinsFromStorage()
+//   game.player1.retrieveWinsFromStorage()
+// }
+
+
+//need to be able to disable the board after a winner is called
+
+
 //write a function called resetgame for the timeout function
+//create a timeout function to clear the board to empty the innerHTML
 
 
-
+//need a function for localStorage
+//window addEventListener (would this work? need to figure out the JSON piece and the key)
+//function loadGamePage(){
+// game.player1.retrieveWinsFromStorage()
+// game.player2.retrieveWinsFromStorage()
+//teamBuffaloWins.innerHTML = game.player1.counterOfWins
+// teamMountainWins.innerHTML = game.player2.counterOfWins
+// }
 
 
 
@@ -139,9 +193,7 @@ function showTeamWins(){
 //   //else if a DRAW (conditions? and innerHTML needs to be updated)
 // }
 
-function hideText(){
-  turnToken.classList.add('hidden');
-}
+
 
 
 //if checkforawin has run and then someone has won, need to END the game

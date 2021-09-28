@@ -164,17 +164,25 @@ console.log(currentPlayerChoices, "what are you?")
           winConditionCounter++
         }
         if (winConditionCounter === 3) {
+          // console.log("1", this.gameOver, this.currentPlayer.winner)
           this.currentPlayer.counterOfWins ++
+
+          this.gameOver = true;
           this.currentPlayer.winner = true
-          console.log("you are a winner")
+          // console.log("2", this.gameOver, this.currentPlayer.winner)
+
+          //need game to end
+
+          // console.log("you are a winner")
           hideText()
           resultsDiv.innerHTML = `You are a winner!`
         }
+
       }
     }
-    console.log("heeeeeeeey checkfor this check for win")
+    // console.log("heeeeeeeey checkfor this check for win")
     this.checkForDraw()
-    console.log("this is draw", this.checkForDraw())
+    // console.log("this is draw", this.checkForDraw())
   }
 
   checkForDraw() {
@@ -182,19 +190,39 @@ console.log(currentPlayerChoices, "what are you?")
       this.draw = true;
       hideText()
       resultsDiv.innerHTML = `This is a draw!`
+      this.gameOver = true;
       //this.resetGame()
     }
   }
-//function isn't currently working
-//need to be able to reset the gameboard after getting the DOM to display player win or a draw!
-  resetGame(){
-    this.currentPlayer.numberOfWins = [];
-    this.currentPlayer = this.player1
-    this.clicks = 0;
-    this.currentPlayer.winner = false;
-    this.currentPlayer.draw = false;
-    theClickedBlock.innerHTML = "";
-    theClickedBlock.disabled = false;
-    timeOut(playNewGame, 3000);
+
+   resetGame(){
+    this.gameOver = false;
+    this.clicks = 0
+    this.player1.winner = false
+    this.player2.winner = false
+    this.draw = false;
+    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined}
+  // console.log("this is the game", game)
+
   }
 }
+
+
+
+
+//function isn't currently working
+//need to be able to reset the gameboard after getting the DOM to display player win or a draw!
+// resetGame(){
+//   // this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
+//   // this.clicks = 0;
+//
+//   // this.player1.counterOfWins = 0;
+//   // this.player2.counterOfWins = 0;
+//   // // this.clicks = 0;
+//   // this.currentPlayer.winner = false;
+//   // this.currentPlayer.draw = false;
+//   // theClickedBlock.innerHTML = "";
+//   // theClickedBlock.disabled = false;
+//   // timeOut(playNewGame, 3000);
+// }
+// }
