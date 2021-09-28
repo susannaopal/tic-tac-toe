@@ -171,6 +171,7 @@ console.log(currentPlayerChoices, "what are you?")
           resultsDiv.innerHTML = `You are a winner!`
           this.gameOver = true;
         }
+    
       }
     }
     console.log("heeeeeeeey checkfor this check for win")
@@ -187,19 +188,24 @@ console.log(currentPlayerChoices, "what are you?")
       //this.resetGame()
     }
   }
+}
+
+
+
+
 //function isn't currently working
 //need to be able to reset the gameboard after getting the DOM to display player win or a draw!
-  resetGame(){
-    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
-    this.clicks = 0;
-  
-    // this.player1.counterOfWins = 0;
-    // this.player2.counterOfWins = 0;
-    // // this.clicks = 0;
-    // this.currentPlayer.winner = false;
-    // this.currentPlayer.draw = false;
-    // theClickedBlock.innerHTML = "";
-    // theClickedBlock.disabled = false;
-    // timeOut(playNewGame, 3000);
-  }
-}
+// resetGame(){
+//   // this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
+//   // this.clicks = 0;
+//
+//   // this.player1.counterOfWins = 0;
+//   // this.player2.counterOfWins = 0;
+//   // // this.clicks = 0;
+//   // this.currentPlayer.winner = false;
+//   // this.currentPlayer.draw = false;
+//   // theClickedBlock.innerHTML = "";
+//   // theClickedBlock.disabled = false;
+//   // timeOut(playNewGame, 3000);
+// }
+// }

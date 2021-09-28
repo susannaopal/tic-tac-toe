@@ -30,14 +30,25 @@ class Player {
     this.winner = false;
   }
 //   saveWinsToStorage(){
-//     var stringifiedWins = JSON.stringify(counterOfWins)
-//   localStorage.setItem(`${this.id}`, winsNumber)
+//   //   var stringifiedWins = JSON.stringify(counterOfWins)
+//   // localStorage.setItem(`${this.counterOfWins}`, winsNumber)
 // }
 //   retrieveWinsFromStorage (){
 //
 // }
+
+
+saveWinsToStorage() {
+localStorage.setItem(`${this.id} playerWins`, JSON.stringify(this.counterOfWins))
+}
+ retrieveWinsFromStorage() {
+    this.counterOfWins = JSON.parse(localStorage.getItem(`${this.id} playerWins`)) || 0
+}
 }
 
+// deleteFromStorage(){
+//     window.localStorage.removeItem(this.id);
+//   }
 
 
 //Local storage only needed to persist for wins: persist across page load refreshes
