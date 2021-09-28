@@ -71,6 +71,8 @@ var blocks = document.querySelectorAll(".block");
 function showWinsFromStorage(){
   game.player1.retrieveWinsFromStorage()
   game.player2.retrieveWinsFromStorage()
+  teamBuffaloWins.innerHTML =  `${game.player1.counterOfWins}`
+  teamMountainWins.innerHTML =  `${game.player2.counterOfWins}`
 }
 
 //EVENT LISTENERS👇
