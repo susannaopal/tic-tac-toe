@@ -169,6 +169,7 @@ console.log(currentPlayerChoices, "what are you?")
           console.log("you are a winner")
           hideText()
           resultsDiv.innerHTML = `You are a winner!`
+          this.gameOver = true;
         }
       }
     }
@@ -182,19 +183,23 @@ console.log(currentPlayerChoices, "what are you?")
       this.draw = true;
       hideText()
       resultsDiv.innerHTML = `This is a draw!`
+        this.gameOver = true;
       //this.resetGame()
     }
   }
 //function isn't currently working
 //need to be able to reset the gameboard after getting the DOM to display player win or a draw!
   resetGame(){
-    this.currentPlayer.numberOfWins = [];
-    this.currentPlayer = this.player1
+    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
     this.clicks = 0;
-    this.currentPlayer.winner = false;
-    this.currentPlayer.draw = false;
-    theClickedBlock.innerHTML = "";
-    theClickedBlock.disabled = false;
-    timeOut(playNewGame, 3000);
+  
+    // this.player1.counterOfWins = 0;
+    // this.player2.counterOfWins = 0;
+    // // this.clicks = 0;
+    // this.currentPlayer.winner = false;
+    // this.currentPlayer.draw = false;
+    // theClickedBlock.innerHTML = "";
+    // theClickedBlock.disabled = false;
+    // timeOut(playNewGame, 3000);
   }
 }
