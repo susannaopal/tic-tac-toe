@@ -80,20 +80,48 @@ function playTokenOnBlock(event){
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
 // console.log("is this here")
-  game.clickBlock(theClickedBlock)
+game.clickBlock(theClickedBlock)
   // console.log(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
-  UpdatePlayerTokenTurn()
-  // game.checkForWin()
+  updatePlayerTokenTurn()
+  showTeamWins()
+
+
+  if(game.over){
+    game.resetGame
+  }
+
+ // game.checkForWin()
 }
 
-function UpdatePlayerTokenTurn(){
+function updatePlayerTokenTurn(){
   if (game.currentPlayer === game.player1) {
     turnToken.innerHTML = `it's ${game.player1.token} turn`
   } else if (game.currentPlayer === game.player2){
     turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
 }
+
+
+
+
+
+//write a function called resetgame for the timeout function
+
+
+
+
+var teamBuffaloWins = document.querySelector("#playerOneWins");
+var teamMountainWins = document.querySelector("#playerTwoWins");
+
+function showTeamWins(){
+  var player1Wins = game.player1.counterOfWins
+  var player2Wins = game.player2.counterOfWins
+  teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
+  teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
+}
+
+
 
 
 
