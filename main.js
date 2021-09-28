@@ -66,7 +66,7 @@ var turnToken = document.querySelector("#turnToken");
 var resultsDiv = document.querySelector("#resultsDiv");
 var teamBuffaloWins = document.querySelector("#playerOneWins");
 var teamMountainWins = document.querySelector("#playerTwoWins");
-
+var blocks = document.querySelectorAll(".block");
 
 //EVENT LISTENERS👇
 //need to build out below for localStorage once implemented
@@ -85,6 +85,7 @@ function playTokenOnBlock(event){
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
 // console.log("is this here")
+
 game.clickBlock(theClickedBlock)
   // console.log(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
@@ -94,10 +95,15 @@ game.clickBlock(theClickedBlock)
 //need to create a GAMEOVER timeout FUNCTION (see game over property added in game class)
   if(game.gameOver === true){
     game.resetGame()
-    gameboardGrid.innerHTML = ""
+    for (var i = 0; i < blocks.length; i++){
+      blocks[i].innerHTML = ""
+      blocks[i].disabled = false;
+    }
+    // gameboardGrid.innerHTML = ""
     // theClickedBlock.innerHTML = ""
     setTimeout(startAnotherGame, 2000)
   }
+  // console.log("3", game.gameOver)
 }
 
 function startAnotherGame(){
