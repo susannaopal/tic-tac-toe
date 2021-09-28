@@ -165,7 +165,8 @@ console.log(currentPlayerChoices, "what are you?")
         }
         if (winConditionCounter === 3) {
           // console.log("1", this.gameOver, this.currentPlayer.winner)
-          this.currentPlayer.counterOfWins ++
+          this.currentPlayer.counterOfWins++
+          this.currentPlayer.saveWinsToStorage()
 
           this.gameOver = true;
           this.currentPlayer.winner = true
