@@ -61,10 +61,13 @@ var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
 var turnToken = document.querySelector("#turnToken");
 var resultsDiv = document.querySelector("#resultsDiv");
+var teamBuffaloWins = document.querySelector("#playerOneWins");
+var teamMountainWins = document.querySelector("#playerTwoWins");
 
 
 //EVENT LISTENERS👇
-
+//need to build out below for localStorage once implemented
+// window.addEventListener('load', loadGamePage)
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
 
@@ -79,20 +82,46 @@ function playTokenOnBlock(event){
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
 // console.log("is this here")
-  game.clickBlock(theClickedBlock)
+game.clickBlock(theClickedBlock)
   // console.log(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
-  updateEmojiTurn()
-  // game.checkForWin()
+  updatePlayerTokenTurn()
+  showTeamWins()
+
+//need to create a GAMEOVER timeout FUNCTION (see game over property added in game class)
+  if(game.over){
+    game.resetGame
+  }
 }
 
-function updateEmojiTurn(){
+function updatePlayerTokenTurn(){
   if (game.currentPlayer === game.player1) {
     turnToken.innerHTML = `it's ${game.player1.token} turn`
   } else if (game.currentPlayer === game.player2){
     turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
 }
+
+
+
+function showTeamWins(){
+  var player1Wins = game.player1.counterOfWins
+  var player2Wins = game.player2.counterOfWins
+  teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
+  teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
+}
+
+
+//write a function called resetgame for the timeout function
+
+
+
+
+
+
+
+
+
 
 //function to tell when a player has won OR if it has ended in a draw
 //function will also need to update the innerHTML of the game player token phrase

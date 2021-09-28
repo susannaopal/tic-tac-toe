@@ -115,6 +115,7 @@ class Game {
     this.currentPlayer = this.player1;
     this.clicks = 0;
     this.draw = false;
+    this.gameOver = false //change to true when there is a win or a draw
   }
 
   clickBlock(theClickedBlock){
@@ -188,9 +189,12 @@ console.log(currentPlayerChoices, "what are you?")
 //need to be able to reset the gameboard after getting the DOM to display player win or a draw!
   resetGame(){
     this.currentPlayer.numberOfWins = [];
+    this.currentPlayer = this.player1
     this.clicks = 0;
     this.currentPlayer.winner = false;
     this.currentPlayer.draw = false;
+    theClickedBlock.innerHTML = "";
+    theClickedBlock.disabled = false;
     timeOut(playNewGame, 3000);
   }
 }

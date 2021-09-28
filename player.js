@@ -30,10 +30,13 @@ class Player {
     this.winner = false;
     // this.draw = false;
   }
-  saveWinsToStorage(){
-  }
-  retrieveWinsFromStorage (){
-  }
+//   saveWinsToStorage(){
+//     var stringifiedWins = JSON.stringify(wins)
+//     window.localStorage.setItem(this.winner, stringifiedWins)
+// }
+//   retrieveWinsFromStorage (){
+//
+// }
 }
 
 
