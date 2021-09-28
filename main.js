@@ -89,8 +89,8 @@ game.clickBlock(theClickedBlock)
   showTeamWins()
 
 //need to create a GAMEOVER timeout FUNCTION (see game over property added in game class)
-  if(game.over){
-    game.resetGame
+  if(game.gameOver === true){
+    game.resetGame()
   }
 }
 
@@ -109,15 +109,26 @@ function showTeamWins(){
   var player2Wins = game.player2.counterOfWins
   if(game.player1.counterOfWins === 1) {
     teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
+
   } else if(game.player2.counterOfWins === 1)
   teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
+
 }
+
+//need to be able to disable the board after a winner is called
 
 
 //write a function called resetgame for the timeout function
 
 
-
+//need a function for localStorage
+//window addEventListener (would this work? need to figure out the JSON piece and the key)
+//function loadGamePage(){
+// game.player1.retrieveWinsFromStorage()
+// game.player2.retrieveWinsFromStorage()
+//teamBuffaloWins.innerHTML = game.player1.counterOfWins
+// teamMountainWins.innerHTML = game.player2.counterOfWins
+// }
 
 
 
