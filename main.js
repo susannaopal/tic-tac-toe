@@ -61,6 +61,8 @@ var buffaloToken = document.querySelector("#buffaloToken");
 var mountainToken = document.querySelector("#mountainToken");
 var turnToken = document.querySelector("#turnToken");
 var resultsDiv = document.querySelector("#resultsDiv");
+var teamBuffaloWins = document.querySelector("#playerOneWins");
+var teamMountainWins = document.querySelector("#playerTwoWins");
 
 
 //EVENT LISTENERS👇
@@ -86,12 +88,10 @@ game.clickBlock(theClickedBlock)
   updatePlayerTokenTurn()
   showTeamWins()
 
-
+//need to create a GAMEOVER timeout FUNCTION (see game over property added in game class)
   if(game.over){
     game.resetGame
   }
-
- // game.checkForWin()
 }
 
 function updatePlayerTokenTurn(){
@@ -104,6 +104,12 @@ function updatePlayerTokenTurn(){
 
 
 
+function showTeamWins(){
+  var player1Wins = game.player1.counterOfWins
+  var player2Wins = game.player2.counterOfWins
+  teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
+  teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
+}
 
 
 //write a function called resetgame for the timeout function
@@ -111,15 +117,6 @@ function updatePlayerTokenTurn(){
 
 
 
-var teamBuffaloWins = document.querySelector("#playerOneWins");
-var teamMountainWins = document.querySelector("#playerTwoWins");
-
-function showTeamWins(){
-  var player1Wins = game.player1.counterOfWins
-  var player2Wins = game.player2.counterOfWins
-  teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
-  teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
-}
 
 
 
