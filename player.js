@@ -39,10 +39,10 @@ class Player {
 
 
 saveWinsToStorage() {
-localStorage.setItem(`${this.id} playerWins`, JSON.stringify(this.counterOfWins))
+localStorage.setItem(this.id, JSON.stringify(this.counterOfWins))
 }
  retrieveWinsFromStorage() {
-    this.counterOfWins = JSON.parse(localStorage.getItem(`${this.id} playerWins`)) || 0
+    this.counterOfWins = JSON.parse(localStorage.getItem(this.id)) 
 }
 }
 
