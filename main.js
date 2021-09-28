@@ -107,7 +107,9 @@ function updatePlayerTokenTurn(){
 function showTeamWins(){
   var player1Wins = game.player1.counterOfWins
   var player2Wins = game.player2.counterOfWins
-  teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
+  if(game.player1.counterOfWins === 1) {
+    teamBuffaloWins.innerHTML = `${game.player1.counterOfWins}`
+  } else if(game.player2.counterOfWins === 1)
   teamMountainWins.innerHTML = `${game.player2.counterOfWins}`
 }
 
