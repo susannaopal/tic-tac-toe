@@ -1,3 +1,4 @@
+/* Body */
 *{
 font-family: 'Cookie', cursive;
 }
@@ -15,6 +16,16 @@ main {
   height: 100vh;
 }
 
+h1 {
+  margin: auto;
+  text-decoration: underline;
+}
+
+p {
+  font-size: 50px;
+}
+
+/* Sections  */
 .player-one,
 .player-two,
 .game-board {
@@ -24,28 +35,24 @@ main {
   align-items: center;
   color: #ffffff;
   font-size: 2em;
-  /* border: 2px solid white; */
   width: 40%;
-  /* text-decoration: underline; */
 }
 
 .player-one,
 .player-two{
   text-decoration: underline;
-
 }
 
+/* Gameboard */
 .game-board {
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
   align-items: center;
   width: 70%;
   background: #e2fef4;
   color: navy;
   flex-wrap: wrap;
 }
-
 
 .article-gameboard-grid {
   display: grid;
@@ -54,11 +61,9 @@ main {
   margin-right: 234px;
   margin-top: auto;
   margin-bottom: 20px;
-  /* border: 2px solid red; */
 }
 
-
-
+/* Buttons */
 .button0,
 .button1,
 .button2{
@@ -83,83 +88,6 @@ main {
   border-right: none;
 }
 
-/* .a1,
-.a2,
-.a3 {
-  border-top: none;
-}
-
-.a1,
-.b1,
-.c1{
-  border-left: none;
-}
-
-.c1,
-.c2,
-.c3 {
-  border-bottom: none;
-}
-
-.a3,
-.b3,
-.c3{
-  border-right: none;
-} */
-
-/* .center-panel{
-  display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      flex-direction: column;
-      border: 2px solid black;
-      margin-left: auto;
-} */
-/* .a1,
-.a2,
-.a3,
-.b1,
-.b2,
-.b3,
-.c1,
-.c2,
-.c3 {
- border: 6px solid navy;
- height:25px;;
- width: 25px;
-} */
-
-/* .a1,
-.b1,
-.c1 {
-  border-left: none;
-
-}
-
-
-
-.a1,
-.a2,
-.a3 {
-  border-top: none;
-}
-
-.a3,
-.b3,
-.c3 {
-  border-right: none;
-}
-
-.c1,
-.c2,
-.c3{
-  border-bottom: none; */
-/* } */
-
-/* //below is now the buttons stufff */
-
-
-
 button {
   border: 6px solid white;
   background-color: #e2fef4;
@@ -169,7 +97,7 @@ button {
   font-size: 2em;
 }
 
-
+/* Tokens */
 .buffalo-token,
 .mountain-token{
   border-radius: 10px;
@@ -187,33 +115,7 @@ button {
   text-decoration: underline;
 }
 
-
-h1 {
-  margin: auto;
-  text-decoration: underline;
-  /* margin-bottom: 40px; */
-  /* padding: 15px; */
-  /* border: 2px solid pink; */
-}
-
-h2{
-  /* margin: 5px; */
-}
-
-/* h3{
-  /* border: 5px solid blue; */
-  /* margin: 10px; */
-/* } */ */
-
-p {
-  font-size: 50px;
-}
-
+/* Hidden */
 .hidden {
   display: none;
-}
-
-.buttons.disabled {
-  background-color: #e2fef4;
-  pointer-events = none;
 }
