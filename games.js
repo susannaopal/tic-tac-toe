@@ -2,7 +2,7 @@ class Game {
   constructor () {
     this.player1 = new Player ('player1', '🦬');
     this.player2 = new Player ('player2', '🏔');
-    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined};
+    this.gameboard = {"button0": null, "button1": null, "button2": null, "button3": null, "button4": null, "button5": null, "button6": null, "button7": null, "button8": null};
     this.winConditions = [[0, 1, 2], [0, 4, 8], [6, 4, 2], [1, 4, 7], [3, 4, 5], [6, 7, 8],[0, 3, 6], [2, 5, 8]];
     this.currentPlayer = this.player1;
     this.clicks = 0;
@@ -49,7 +49,6 @@ class Game {
           this.currentPlayer.saveWinsToStorage()
           this.gameOver = true;
           this.currentPlayer.winner = true
-          hideText()
           resultsDiv.innerHTML = `You are a winner!`
         }
 
@@ -60,7 +59,6 @@ class Game {
   checkForDraw(){
     if (!this.currentPlayer.winner && this.clicks === 9) {
       this.draw = true;
-      hideText()
       resultsDiv.innerHTML = `This is a draw!`
       this.gameOver = true;
     }
@@ -71,6 +69,6 @@ class Game {
     this.player1.winner = false;
     this.player2.winner = false;
     this.draw = false;
-    this.gameboard = {"button0": undefined, "button1": undefined, "button2": undefined, "button3": undefined, "button4": undefined, "button5": undefined, "button6": undefined, "button7": undefined, "button8": undefined}
+    this.gameboard = {"button0": null, "button1": null, "button2": null, "button3": null, "button4": null, "button5": null, "button6": null, "button7": null, "button8": null}
   }
 }
