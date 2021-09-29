@@ -11,7 +11,6 @@ var teamBuffaloWins = document.querySelector("#playerOneWins");
 var teamMountainWins = document.querySelector("#playerTwoWins");
 var blocks = document.querySelectorAll(".block");
 
-
 //EVENT LISTENERS👇
 window.addEventListener('load', showWinsFromStorage);
 gameboardGrid.addEventListener('click', playTokenOnBlock);
