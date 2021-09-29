@@ -21,7 +21,7 @@ Find the project[here](file:///Users/susannacarey/turing/mod_1/tic-tac-toe/index
 - The first player to place three tokens in a row will be the winner, else the game will end in a tied draw.
 - Player is also attempting to keep their opponent from being able to place three blocks in a row to divert from a win for them.
 - A timeout will occur after a game is won or falls to a draw that automatically updates for another game.
-- Wins are stored for each player and are showcased by team on the side, they will remain despite page reload, with a message to tell if there is a winner or a draw.
+- Wins are stored for each player and are showcased by team on the side, they will remain despite page reload, with a message to tell if there is a winner or a draw. Additionally, the app will tell which player plays next.
 
 ## Technologies
 - Atom
@@ -38,6 +38,16 @@ Find the project[here](file:///Users/susannacarey/turing/mod_1/tic-tac-toe/index
 
 ##Screenshots of Project:
 Start of new game: <img width="1427" alt="Screen Shot 2021-09-28 at 10 26 40 PM" src="https://user-images.githubusercontent.com/83846677/135193691-2efc8379-af7b-4160-9754-29be5bd465b9.png">
+
+Player 1 plays first token: <img width="1396" alt="Screen Shot 2021-09-28 at 10 26 51 PM" src="https://user-images.githubusercontent.com/83846677/135194051-85a18b20-cbcd-462d-8acb-4cf36462b584.png">
+
+Player 2 plays a token: <img width="1408" alt="Screen Shot 2021-09-28 at 10 27 01 PM" src="https://user-images.githubusercontent.com/83846677/135194106-01fdba9a-235b-4fc6-b9ab-80f71a76cb13.png">
+
+Example of a draw and a win: <img width="1253" alt="Screen Shot 2021-09-28 at 10 31 17 PM" src="https://user-images.githubusercontent.com/83846677/135194206-88684999-0d4a-4006-ad0a-e752125f8ee2.png">
+<img width="1229" alt="Screen Shot 2021-09-28 at 10 32 46 PM" src="https://user-images.githubusercontent.com/83846677/135194255-695b0fad-5afb-4fec-b141-24d811226dbb.png">
+
+
+
 
 
 ## Contributors
