@@ -35,7 +35,6 @@ Find the project[here](file:///Users/susannacarey/turing/mod_1/tic-tac-toe/index
 - CSS
 - HTML
 
-
 ##Screenshots of Project:
 Start of new game: <img width="1427" alt="Screen Shot 2021-09-28 at 10 26 40 PM" src="https://user-images.githubusercontent.com/83846677/135193691-2efc8379-af7b-4160-9754-29be5bd465b9.png">
 
@@ -45,10 +44,6 @@ Player 2 plays a token: <img width="1408" alt="Screen Shot 2021-09-28 at 10 27 0
 
 Example of a draw and a win: <img width="1253" alt="Screen Shot 2021-09-28 at 10 31 17 PM" src="https://user-images.githubusercontent.com/83846677/135194206-88684999-0d4a-4006-ad0a-e752125f8ee2.png">
 <img width="1229" alt="Screen Shot 2021-09-28 at 10 32 46 PM" src="https://user-images.githubusercontent.com/83846677/135194255-695b0fad-5afb-4fec-b141-24d811226dbb.png">
-
-
-
-
 
 ## Contributors
 - [Susanna Carey](https://github.com/susannaopal)
@@ -63,7 +58,7 @@ Example of a draw and a win: <img width="1253" alt="Screen Shot 2021-09-28 at 10
 ## Challenges + Improvements
 - Making sure that all of the functionality is working correctly to connect the data model to the DOM
 - In the future, I would like to further refactor all of my JS files to ensure DRYer/SRP code
-
+- Being able to better troubleshoot any issues/bug
 
 ## Project Specs
 - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
