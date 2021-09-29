@@ -22,12 +22,12 @@ function showWinsFromStorage(){
 window.addEventListener('load', showWinsFromStorage);
 gameboardGrid.addEventListener('click', playTokenOnBlock);
 
-
 //FUNCTIONS & EVENT HANDLERS👇
 function playTokenOnBlock(event){
   var theClickedBlock = event.target.classList[0]
   if (game.player1 === game.currentPlayer) {
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🦬`
+  console.log(game)
 } else {
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
 }
@@ -37,21 +37,33 @@ game.clickBlock(theClickedBlock)
   showTeamWins()
   if(game.gameOver === true){
     game.resetGame()
-    for (var i = 0; i < blocks.length; i++){
-      blocks[i].innerHTML = ""
-      blocks[i].disabled = false;
-    }
-    setTimeout(startAnotherGame, 2000)
-    hidePhrase()
+    window.setTimeout(clearBoard, 2000)
   }
 }
-//need to troubleshoot this functionality since not working correctly
+
 function startAnotherGame(){
+  console.log("are you working?")
   resultsDiv.classList.remove('hidden')
 }
 
+function clearResults(){
+  resultsDiv.classList.add('hidden')
+}
+
+function showPhrase() {
+  turnToken.classList.remove('hidden')
+}
 function hidePhrase(){
-  resultsDiv.classList.remove('hidden')
+  turnToken.classList.add('hidden')
+}
+
+function clearBoard(){
+  for (var i = 0; i < blocks.length; i++){
+    blocks[i].innerHTML = ""
+    blocks[i].disabled = false;
+  }
+  showPhrase()
+  clearResults()
 }
 
 function updatePlayerTokenTurn(){
@@ -60,10 +72,6 @@ function updatePlayerTokenTurn(){
   } else if (game.currentPlayer === game.player2){
     turnToken.innerHTML = `it's ${game.player2.token} turn`
   }
-}
-
-function hideText(){
-  turnToken.classList.remove('hidden');
 }
 
 function showTeamWins(){
