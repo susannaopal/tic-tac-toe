@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 Mod1 (2108) Final Solo Project
-Find the project [here](file:///Users/susannacarey/turing/mod_1/tic-tac-toe/index.html)
+Find the project [here] (file:///Users/susannacarey/turing/mod_1/tic-tac-toe/index.html)
 
 ## Table of Contents
   - [Abstract](#abstract)
