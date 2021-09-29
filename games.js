@@ -26,7 +26,7 @@ class Game {
     } else if (this.currentPlayer === this.player2){
       this.currentPlayer = this.player1
     }
-}
+  }
   getPlayerChoices(){
     var gameboardValues = Object.values(this.gameboard)
     var currentPlayerChoices = [];
@@ -51,7 +51,6 @@ class Game {
           this.currentPlayer.winner = true
           resultsDiv.innerHTML = `You are a winner!`
         }
-
       }
     }
     this.checkForDraw()
