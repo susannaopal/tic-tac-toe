@@ -1,5 +1,5 @@
 //Global Variable 👇
-var game = new Game();
+var game = new Game()
 
 //QUERY SELECTORS 👇
 var gameboardGrid = document.querySelector("#gameboardGrid");
@@ -11,6 +11,11 @@ var teamBuffaloWins = document.querySelector("#playerOneWins");
 var teamMountainWins = document.querySelector("#playerTwoWins");
 var blocks = document.querySelectorAll(".block");
 
+//EVENT LISTENERS👇
+window.addEventListener('load', showWinsFromStorage);
+gameboardGrid.addEventListener('click', playTokenOnBlock);
+
+//FUNCTIONS & EVENT HANDLERS👇
 function showWinsFromStorage(){
   game.player1.retrieveWinsFromStorage()
   game.player2.retrieveWinsFromStorage()
@@ -18,19 +23,14 @@ function showWinsFromStorage(){
   teamMountainWins.innerHTML =  `${game.player2.counterOfWins}`
 }
 
-//EVENT LISTENERS👇
-window.addEventListener('load', showWinsFromStorage);
-gameboardGrid.addEventListener('click', playTokenOnBlock);
-
-//FUNCTIONS & EVENT HANDLERS👇
 function playTokenOnBlock(event){
   var theClickedBlock = event.target.classList[0]
   if (game.player1 === game.currentPlayer) {
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🦬`
   console.log(game)
-} else {
+  } else {
   document.querySelector(`.${theClickedBlock}`).innerHTML = `🏔`
-}
+  }
 game.clickBlock(theClickedBlock)
   document.querySelector(`.${theClickedBlock}`).disabled = true;
   updatePlayerTokenTurn()
@@ -41,20 +41,12 @@ game.clickBlock(theClickedBlock)
   }
 }
 
-function startAnotherGame(){
-  console.log("are you working?")
-  resultsDiv.classList.remove('hidden')
-}
-
 function clearResults(){
   resultsDiv.classList.add('hidden')
 }
 
 function showPhrase() {
   turnToken.classList.remove('hidden')
-}
-function hidePhrase(){
-  turnToken.classList.add('hidden')
 }
 
 function clearBoard(){
